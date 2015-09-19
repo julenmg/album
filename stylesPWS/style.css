@@ -2,15 +2,48 @@
 * 						{margin: 0; padding: 0;}
 body						{font: 16px Georgia, serif;}
 
-#page-wrap				{margin: 2% auto; color: white;}
+#page-wrap				{margin: 2% auto; color: white;width:900px;}
 #page-wrap >.main 		{border: 1px solid #999; padding: 1%;
 						 margin-bottom: 1px; color: black;}
 
 section > div				{padding: 20px;}
-header, nav, section		{background: #eee; text-align: center;}
-footer					{background: #eee; text-align: center;}
+header, nav,footer			{text-align: center; }
+
+#page-wrap >.main  h3,p{color:white; margin:2% auto;}
+
+#page-wrap >.main h2{color:white;}
+
+#page-wrap >.main a{color:black;}
+
+#n1 span{
+	margin: 5% auto;
+}
+
+#n1 span > a{
+	color: grey;
+}
+header{
+	background: #d4a76a;
+}
+
+nav{
+	background:#d4b16a;
+}
+
+footer{
+	background: #d4a76a;
+}
+
+section{
+	background-color: #805215;
+}
+
+article input,textarea{
+	margin: 6px;
+}
+
 nav span             			{ margin: 0px 10px 0px 0px;
 						width: 100%;
 						display: inline-block;}
 
-#ErrorMsgs          		 { color: #f61; font-size: smaler}
+#ErrorMsgs          		 { color: #f61; font-size: 16px;}
