@@ -17,8 +17,8 @@
 		   href='css/mycss.css' />
 
 	<script type="text/javascript">
-	function ikusBalioak(){
-		var sAux="";
+	function boolean ikusBalioak(){
+		/*var sAux="";
 		var frm=document.getElementById("erregistro");
 		for(i=0;i<frm.elements.length;i++){
 			if(frm.elements[i].name == "espezialitatea"){
@@ -32,8 +32,12 @@
 			  sAux +=" BALIOA: " + frm.elements[i].value+"\n";
 			}
 			
-		}
-		alert(sAux);
+		}*/
+		//alert(sAux);
+		var posta = document.getElementById("posta");
+		var arroba = posta.indexOf("@");
+		
+		return true;
 	}
 	</script>
   </head>
@@ -45,31 +49,29 @@
       <span class="right" style="display:none;"><a href="/logout">Logout</a></span>
 	<h2>Quiz: crazy questions</h2>
     </header>
-	<nav class='main' id='n1' role='navigation'>
-		<span><a href='layout.html'>Home</a></span>
-		<span><a href='/quizzes'>Quizzes</a></span>
-		<span><a href='credits.html'>Credits</a></span>
-	</nav>
     <section class="main" id="s1">
 		<h2>SignUp</h2>
 		<article>
 			<h3>Formularioa</h3>
-			<form id="erregistro" name="erregistro" onSubmit="ikusBalioak()" >
-				<input type="text" name="izena" placeholder="Adb: Jon" autofocus required />
+			<form method="POST"" id="erregistro" name="erregistro" onSubmit="return ikusBalioak()" >
+				Izena: <input type="text" name="izena" placeholder="Adb: Jon" autofocus required />
 				<br/>
-				<input type="text" name="abizenak" placeholder="Adb: Egana Granado" required />
+				Abizenak: <input type="text" name="abizenak" placeholder="Adb: Egana Granado" required />
 				<br/>
-				<input type="email" name="posta" placeholder="Adb: adibidea@gmail.com"  title="aa@aa.aa" required/>
+				Helbide elektronikoa: <input id="posta" type="email" name="posta" placeholder="Adb: adibidea@gmail.com"  required/>
 				<br/>
-				<input type="password" name="pasahitza" placeholder="1234" required pattern=".{4,}" />
+				Pasahitza: <input type="password" name="pasahitza" placeholder="1234" required pattern=".{6,}" />
 				<br/>
-				<input type="tel" name="telf" placeholder="912345678" required pattern=".{9,}"/>
+				Telefonoa: <input type="tel" name="telf" placeholder="912345678" required pattern=".{9,}"/>
 				<br/>
+				<h4>Espezialitateak</h4>
 				<input type="radio" name="espezialitatea" value="SI" required/>Software Ingeniaritza
 				<input type="radio" name="espezialitatea" value="K"/>Konputazioa
 				<input type="radio" name="espezialitatea" value="KI"/>Konputagailuen Ingeniaritza
+				<input type="radio" name="espezialitatea" value="B"/>Besterik
 				<br/>
-				<textarea name="textarea" rows="3" cols="22" placeholder="Interesa duzun teknologiak eta erremintak"></textarea>
+				<h4>Interesa duzun teknologiak eta erremintak:</h4>
+				<textarea name="textarea" rows="3" cols="22" ></textarea>
 				<br/>
 				<input name="imagen" type="file" required/>
 				<br/>
@@ -78,6 +80,7 @@
 		</article>
     </section>
 	<footer class='main' id='f1'>
+		<a href="layout.html"><img src="image/image1.jpg" alt="Smiley face" height="100" width="100"> </a>
 		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
 		<a href='https://github.com'>Link GITHUB</a>
 	</footer>
