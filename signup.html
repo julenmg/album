@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
@@ -16,7 +16,9 @@
 		   type='text/css' 
 		   href='css/mycss.css' />
 
-	<script type="text/javascript" src="js/myscript.js"></script>
+	<script type="text/javascript" src="js/myscript.js">
+	
+	</script>
   </head>
   <body>
   <div id='page-wrap'>
@@ -31,17 +33,18 @@
 		<center>
 		<article>
 			<h3>Formularioa</h3>
+			
 			<div>
-			<form id="erregistro"  action="nire.php" method="POST" name="erregistro" onSubmit="ikusBalioak()" >
-				Izena: <input type="text" id="izen" name="izena" placeholder="Jon" autofocus  required/>
+			<form id="erregistro" action="nire.php" method="POST" name="erregistro" onSubmit="return balidatzen()" >
+				Izena: <input type="text" id="izen" name="izena" placeholder="Jon" autofocus  />
 				<br/>
-				Abizenak: <input type="text" id="abizen" name="abizenak"  placeholder="Egana Granado" required pattern="([a-zA-z]*\s[a-zA-z]*)*"/>
+				Abizenak: <input type="text" id="abizen" name="abizenak" placeholder="Egana Granado" />
 				<br/>
-				Emaila: <input type="email" id="posta" name="posta" placeholder="myname001@ikasle.ehu.es" pattern="^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$" required/>
+				Emaila: <input type="text" id="posta" name="posta" placeholder="myname001@ikasle.ehu.es"/>
 				<br/>
-				Pasahitza: <input id="pass" type="password" name="pasahitza" placeholder="123456" pattern=".{6,}"required  />
+				Pasahitza: <input id="pass" type="password" name="pasahitza" placeholder="123456"   />
 				<br/>
-				Telefonoa: <input id="tel" type="tel" maxlength="9" name="telf"  placeholder="912345678"  pattern="[0-9]{9}" required />
+				Telefonoa: <input id="tel" type="tel" maxlength="9"name="telf"  placeholder="912345678" />
 				<br/>
 				<h4>Espezialitatea</h4>
 				<input type="radio" name="espezialitatea" onchange="besterik()" value="SI" checked/>Software Ingeniaritza
@@ -63,6 +66,8 @@
 				<br/>
 				<input name="submitBtn" type="submit" value="Submit!" />
 			</form>
+			
+			
 		</article>
 		</center>
     </section>

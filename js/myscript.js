@@ -1,3 +1,48 @@
+//html4ko inputak balidatzen
+function balidatzen(){
+	var objektua=document.getElementById("izen");
+	var reHutsunea = new RegExp(" ");
+	
+	if(objektua.value == ""){
+		alert("izena falta da");
+		return false;
+	}
+		
+	objektua=document.getElementById("abizen");
+	if(objektua.value == "" || !reHutsunea.test(objektua.value)){
+		alert("abizenak!!");
+		return false;
+	}
+		
+	objektua = document.getElementById("posta");
+	exp=new RegExp("\^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$");
+	if(!exp.test(objektua.value)){
+		 objektua.select();
+		return false;
+	}
+		
+	objektua=document.getElementById("pass");
+	if(objektua.value.length < 6 || reHutsunea.test(objektua.value)){
+		alert("Ondo sartu pasahitza");
+		return false;
+	}
+		
+	objektua=document.getElementById("tel");
+	if(objektua.value.length <= 8  ||  (/^([0-9])*$/.test(objektua.value) == false)){
+		alert("Ondo sartu telefonoa");
+		return false;
+	}
+		
+	ikusBalioak();
+	return true;
+}
+
+//html5ko inputak balidatzen
+function konprobatu(){
+	alert("dfasfsd");
+		
+}
+
 //Dena ballidatuta dagoenean alert bat agertuko da datu guztiak erakutsiz
 function ikusBalioak(){
 	var sAux="";
