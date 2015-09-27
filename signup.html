@@ -16,67 +16,7 @@
 		   type='text/css' 
 		   href='css/mycss.css' />
 
-	<script type="text/javascript">
-	function ikusBalioak(){
-		var sAux="";
-		var frm=document.getElementById("erregistro");
-		for(i=0;i<frm.elements.length;i++){
-			if(frm.elements[i].name == "espezialitatea"){
-				if(frm.elements[i].checked){
-				  sAux +="IZENA: " + frm.elements[i].name+"";
-			      sAux +=" BALIOA: " + frm.elements[i].value+"\n";
-				}
-			}
-			else{	
-			  sAux +="IZENA: " + frm.elements[i].name+"";
-			  sAux +=" BALIOA: " + frm.elements[i].value+"\n";
-			}
-			
-		}
-		alert(sAux);
-		
-	}
-	
-	function balidatzen(){
-		var objektua=document.getElementById("izen");
-		var reHutsunea = new RegExp(" ");
-		
-		if(objektua.value == ""){
-			alert("izena falta da");
-			return false;
-		}
-		
-		objektua=document.getElementById("abizen");
-
-		if(objektua.value == "" || !reHutsunea.test(objektua.value)){
-			alert("abizenak!!");
-			return false;
-		}
-		
-		objektua = document.getElementById("posta");
-		exp=new RegExp("\^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$");
-		if(!exp.test(objektua.value)){
-			 objektua.select();
-			return false;
-		}
-		
-		objektua=document.getElementById("pass");
-		if(objektua.value.length < 6 || reHutsunea.test(objektua.value)){
-			alert("Ondo sartu pasahitza");
-			return false;
-		}
-		
-		objektua=document.getElementById("tel");
-		if(objektua.value.length < 9  || objektua.value == "" || reHutsunea.test(objektua.value)){
-			alert("Ondo sartu telefonoa");
-			return false;
-		}
-		
-		ikusBalioak();
-		return true;
-	}
-	
-	</script>
+	<script type="text/javascript" src="js/myscript.js"></script>
   </head>
   <body>
   <div id='page-wrap'>
@@ -91,45 +31,45 @@
 		<center>
 		<article>
 			<h3>Formularioa</h3>
-			
 			<div>
-			<form id="erregistro" action="nire.php" method="POST" name="erregistro" onSubmit="return balidatzen()" >
-				Izena: <input type="text" id="izen" name="izena" placeholder="Jon" autofocus  />
+			<form id="erregistro"  action="nire.php" method="POST" name="erregistro" onSubmit="ikusBalioak()" >
+				Izena: <input type="text" id="izen" name="izena" placeholder="Jon" autofocus  required/>
 				<br/>
-				Abizenak: <input type="text" id="abizen" name="abizenak" placeholder="Egana Granado" />
+				Abizenak: <input type="text" id="abizen" name="abizenak"  placeholder="Egana Granado" required pattern="([a-zA-z]*\s[a-zA-z]*)*"/>
 				<br/>
-				Emaila: <input type="text" id="posta" name="posta" placeholder="myname001@ikasle.ehu.es"/>
+				Emaila: <input type="email" id="posta" name="posta" placeholder="myname001@ikasle.ehu.es" pattern="^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$" required/>
 				<br/>
-				Pasahitza: <input id="pass" type="password" name="pasahitza" placeholder="123456"   />
+				Pasahitza: <input id="pass" type="password" name="pasahitza" placeholder="123456" pattern=".{6,}"required  />
 				<br/>
-				Telefonoa: <input id="tel" type="tel" name="telf"  placeholder="912345678"  "/>
+				Telefonoa: <input id="tel" type="tel" maxlength="9" name="telf"  placeholder="912345678"  pattern="[0-9]{9}" required />
 				<br/>
 				<h4>Espezialitatea</h4>
-				<input type="radio" name="espezialitatea" value="SI" checked/>Software Ingeniaritza
+				<input type="radio" name="espezialitatea" onchange="besterik()" value="SI" checked/>Software Ingeniaritza
 				<br/>
-				<input type="radio" name="espezialitatea" value="K"/>Konputazioa
+				<input type="radio" name="espezialitatea" onchange="besterik()"  value="K"/>Konputazioa
 				<br/>
-				<input type="radio" name="espezialitatea" value="KI"/>Konputagailuen Ingeniaritza
+				<input type="radio" name="espezialitatea" onchange="besterik()"  value="KI"/>Konputagailuen Ingeniaritza
 				<br/>
-				<input type="radio" name="espezialitatea" value="B"/>Besterik
+				<input type="radio" id="B" name="espezialitatea" onchange="besterik()" value="B"/>Besterik
+				<br/>
+				<textarea id="besterikTextarea" name="textarea" rows="3" cols="22" ></textarea>
 				<br/>
 				<h4>Interesa duzun teknologiak eta erremintak</h4>
 				<textarea name="textarea" rows="3" cols="22"></textarea>
 				<br/>
-				<input name="imagen" type="file" />
-				<img src="" id="irudia" height="100" width="100" style="display:none;" />
+				<input name="irudiaIgo"type="file" accept="image/*"  onchange="showMyImage(this)" />
+				<br/>
+				<img id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
 				<br/>
 				<input name="submitBtn" type="submit" value="Submit!" />
 			</form>
-			
-			
 		</article>
 		</center>
     </section>
 	<footer class='main' id='f1'>
-		<a href='layout.html'>	<img src="image/image1.jpg" alt="gohome" height="50" width="50"></a>
+		<a href='layout.html'>	<img src="image/home.png" alt="gohome" height="50" width="50"></a>
 		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
-		<a href='https://github.com'>Link GITHUB</a>
+		<a href='credits.html'>Credits</a>
 	</footer>
 </div>
 </body>

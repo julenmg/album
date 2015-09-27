@@ -36,6 +36,9 @@ section{
 
 article input,textarea{
 	margin: 6px;
+	resize:none;
 }
+
+#besterikTextarea{display:none;}
 
 #ErrorMsgs          		 { color: #f61; font-size: 16px;}
