@@ -1,6 +1,6 @@
 <?php
-//mysql_connect("mysql.hostinger.es","u217085219_root","123456") or die(mysql_error());
-mysql_connect("localhost","root","") or die(mysql_error());
+mysql_connect("mysql.hostinger.es","u217085219_root","123456") or die(mysql_error());
+//mysql_connect("localhost","root","") or die(mysql_error());
 //$dbLink = new mysqli("localhost","root","","quiz");
 /*if(mysqli_connect_errno()) {
             die("MySQL connection failed: ". mysqli_connect_error());
