@@ -28,12 +28,12 @@ if(!mysql_query($sql)){
         $mime = $dbLink->real_escape_string($_FILES['irudiaIgo']['type']);
         $data = $dbLink->real_escape_string(file_get_contents($_FILES  ['irudiaIgo']['tmp_name']));
         //$size = intval($_FILES['irudiaIgo']['size']);   
-    }*/
+    }
     else {
         echo 'Errore bat egon da igotzen ari zinen bitartean '
            . 'Errore kodea: '. intval($_FILES['irudiaIgo']['error']);
     }
-/*}
+}
 else {
     echo 'Errore bat, fitxategia ez da bidali';
 }
