@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
@@ -16,9 +16,7 @@
 		   type='text/css' 
 		   href='css/mycss.css' />
 
-	<script type="text/javascript" src="js/myscript.js">
-	
-	</script>
+	<script type="text/javascript" src="js/myscript.js"></script>
   </head>
   <body>
   <div id='page-wrap'>
@@ -33,41 +31,38 @@
 		<center>
 		<article>
 			<h3>Formularioa</h3>
-			
 			<div>
-			<form id="erregistro" action="nire.php" method="POST" name="erregistro" onSubmit="return balidatzen()" >
-				Izena: <input type="text" id="izen" name="izena" placeholder="Jon" autofocus  />
+			<form id="erregistro"  action="php/Erregistratu.php" method="POST" name="erregistro" onSubmit="ikusBalioak()" enctype="multipart/form-data" >
+				Izena: <input type="text" id="izen" name="IZENA" placeholder="Jon" autofocus  required/>
 				<br/>
-				Abizenak: <input type="text" id="abizen" name="abizenak" placeholder="Egana Granado" />
+				Abizenak: <input type="text" id="abizen" name="ABIZENAK"  placeholder="Egana Granado" required pattern="([a-zA-z]*\s[a-zA-z]*)*"/>
 				<br/>
-				Emaila: <input type="text" id="posta" name="posta" placeholder="myname001@ikasle.ehu.es"/>
+				Emaila: <input type="email" id="posta" name="POSTA" placeholder="myname001@ikasle.ehu.es" pattern="^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$" required/>
 				<br/>
-				Pasahitza: <input id="pass" type="password" name="pasahitza" placeholder="123456"   />
+				Pasahitza: <input id="pass" type="password" name="PASAHITZA" placeholder="123456" pattern=".{6,}"required  />
 				<br/>
-				Telefonoa: <input id="tel" type="tel" maxlength="9"name="telf"  placeholder="912345678" />
+				Telefonoa: <input id="tel" type="tel" maxlength="9" name="TELEFONOA"  placeholder="912345678"  pattern="[0-9]{9}" required />
 				<br/>
 				<h4>Espezialitatea</h4>
-				<input type="radio" name="espezialitatea" onchange="besterik()" value="SI" checked/>Software Ingeniaritza
+				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()" value="SI" checked/>Software Ingeniaritza
 				<br/>
-				<input type="radio" name="espezialitatea" onchange="besterik()"  value="K"/>Konputazioa
+				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()"  value="K"/>Konputazioa
 				<br/>
-				<input type="radio" name="espezialitatea" onchange="besterik()"  value="KI"/>Konputagailuen Ingeniaritza
+				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()"  value="KI"/>Konputagailuen Ingeniaritza
 				<br/>
-				<input type="radio" id="B" name="espezialitatea" onchange="besterik()" value="B"/>Besterik
+				<input type="radio" id="B" name="ESPEZIALITATEA" onchange="besterik()" value="B"/>Besterik
 				<br/>
-				<textarea id="besterikTextarea" name="textarea" rows="3" cols="22" ></textarea>
+				<input type="text" id="besterikTextarea" name="BTT"/>
 				<br/>
 				<h4>Interesa duzun teknologiak eta erremintak</h4>
 				<textarea name="textarea" rows="3" cols="22"></textarea>
 				<br/>
-				<input name="irudiaIgo"type="file" accept="image/*"  onchange="showMyImage(this)" />
+				<input name="irudiaIgo"type="file" onchange="showMyImage(this)" />
 				<br/>
 				<img id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
 				<br/>
 				<input name="submitBtn" type="submit" value="Submit!" />
 			</form>
-			
-			
 		</article>
 		</center>
     </section>
