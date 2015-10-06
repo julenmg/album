@@ -2,8 +2,8 @@
 //mysql_connect("mysql.hostinger.es","u583754354_root","123456") or die(mysql_error());
 //mysql_connect("localhost","root","") or die(mysql_error());
 //mysql_select_db("quiz") or die(mysql_error());
-//$dbLink = new mysqli("mysql.hostinger.es","u583754354_root","123456","u583754354_quizz");
-$dbLink = new mysqli("localhost","root","","quiz");
+$dbLink = new mysqli("mysql.hostinger.es","u583754354_root","123456","u583754354_quizz");
+//$dbLink = new mysqli("localhost","root","","quiz");
 $erabiltzaileak = "SELECT * FROM ERABILTZAILEA" ;
 $result = $dbLink->query($erabiltzaileak);
 echo '<table border=1><tr><th> POSTA </th><th> IZENA </th><th> ABIZENAK </th><th> PASAHITZA </th><th> TELEFONOA </th><th> ESPEZIALITATEA </th><th> IRUDIA </th></tr>';
