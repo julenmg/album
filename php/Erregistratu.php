@@ -1,8 +1,8 @@
 <?php
-//mysql_connect("mysql.hostinger.es","u217085219_root","123456") or die(mysql_error());
+//mysql_connect("mysql.hostinger.es","u583754354_root","123456") or die(mysql_error());
 //mysql_connect("localhost","root","") or die(mysql_error());
-$dbLink = new mysqli("mysql.hostinger.es","u217085219_root","123456","u217085219_quiz");
-//$dbLink = new mysqli("localhost","root","","quiz");
+//$dbLink = new mysqli("mysql.hostinger.es","u583754354_root","123456","u583754354_quizz");
+$dbLink = new mysqli("localhost","root","","quiz");
 if(mysqli_connect_errno()) {
             die("MySQL connection failed: ". mysqli_connect_error());
         }
@@ -24,11 +24,11 @@ if(!mysql_query($sql)){
             die("MySQL connection failed: ". mysqli_connect_error());
         }*/
         // Igotako irudiaren datuak gorde aldagaietan
-        /*$name = $dbLink->real_escape_string($_FILES['irudiaIgo']['name']);
-        $mime = $dbLink->real_escape_string($_FILES['irudiaIgo']['type']);
+        //$name = $dbLink->real_escape_string($_FILES['irudiaIgo']['name']);
+        //$mime = $dbLink->real_escape_string($_FILES['irudiaIgo']['type']);
         $data = $dbLink->real_escape_string(file_get_contents($_FILES  ['irudiaIgo']['tmp_name']));
         //$size = intval($_FILES['irudiaIgo']['size']);   
-    }
+    /*}
     else {
         echo 'Errore bat egon da igotzen ari zinen bitartean '
            . 'Errore kodea: '. intval($_FILES['irudiaIgo']['error']);
@@ -36,14 +36,14 @@ if(!mysql_query($sql)){
 }
 else {
     echo 'Errore bat, fitxategia ez da bidali';
-}
+}*/
 		$sp = $_POST['ESPEZIALITATEA'];
 		
 		if(strcmp($sp, "B") == 0){
 			$sp = $_POST['BTT'];
-		}*/
-		$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,TELEFONOA,ESPEZIALITATEA)
-		VALUES ('$_POST[POSTA]','$_POST[IZENA]','$_POST[ABIZENAK]','$_POST[PASAHITZA]','$_POST[TELEFONOA]','$_POST[ESPEZIALITATEA]')";
+		}
+		$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,TELEFONOA,ESPEZIALITATEA,IRUDIA)
+		VALUES ('$_POST[POSTA]','$_POST[IZENA]','$_POST[ABIZENAK]','$_POST[PASAHITZA]','$_POST[TELEFONOA]','{$sp}','{$data}')";
 		//,IRUDIA)'{$sp}','{$data}')";
         // SQL exekutatu 
         $result = $dbLink->query($sql);

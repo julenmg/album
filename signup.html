@@ -1,76 +1,76 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
-	<title>Signup</title>
-    <link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />
-	<link rel='stylesheet' 
-		   type='text/css' 
-		   media='only screen and (min-width: 530px) and (min-device-width: 481px)'
-		   href='stylesPWS/wide.css' />
-	<link rel='stylesheet' 
-		   type='text/css' 
-		   media='only screen and (max-width: 480px)'
-		   href='stylesPWS/smartphone.css' />
-		<link rel='stylesheet' 
-		   type='text/css' 
-		   href='css/mycss.css' />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Formularioa</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="icon" href="stylesPWS\images\form.png">
+  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
+  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
+  <script type="text/javascript" src="js/myscript.js"></script>
+ </head>
 
-	<script type="text/javascript" src="js/myscript.js"></script>
-  </head>
-  <body>
-  <div id='page-wrap'>
-	<header class='main' id='h1'>
-      <span class="right"><a href="#">Login</a></span> |
-	  <span class="right"><a href="signup.html">SignUp</a></span>
-      <span class="right" style="display:none;"><a href="/logout">Logout</a></span>
-	<h2>Quiz: crazy questions</h2>
-    </header>
-    <section class="main" id="s1">
-		<h2>SignUp</h2>
-		<center>
-		<article>
-			<h3>Formularioa</h3>
-			<div>
-			<form id="erregistro"  action="php/Erregistratu.php" method="POST" name="erregistro" onSubmit="ikusBalioak()" enctype="multipart/form-data" >
-				Izena: <input type="text" id="izen" name="IZENA" placeholder="Jon" autofocus  required/>
-				<br/>
-				Abizenak: <input type="text" id="abizen" name="ABIZENAK"  placeholder="Egana Granado" required pattern="([a-zA-z]*\s[a-zA-z]*)*"/>
-				<br/>
-				Emaila: <input type="email" id="posta" name="POSTA" placeholder="myname001@ikasle.ehu.es" pattern="^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$" required/>
-				<br/>
-				Pasahitza: <input id="pass" type="password" name="PASAHITZA" placeholder="123456" pattern=".{6,}"required  />
-				<br/>
-				Telefonoa: <input id="tel" type="tel" maxlength="9" name="TELEFONOA"  placeholder="912345678"  pattern="[0-9]{9}" required />
-				<br/>
-				<h4>Espezialitatea</h4>
-				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()" value="SI" checked/>Software Ingeniaritza
-				<br/>
-				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()"  value="K"/>Konputazioa
-				<br/>
-				<input type="radio" name="ESPEZIALITATEA" onchange="besterik()"  value="KI"/>Konputagailuen Ingeniaritza
-				<br/>
-				<input type="radio" id="B" name="ESPEZIALITATEA" onchange="besterik()" value="B"/>Besterik
-				<br/>
-				<input type="text" id="besterikTextarea" name="BTT"/>
-				<br/>
-				<h4>Interesa duzun teknologiak eta erremintak</h4>
-				<textarea name="textarea" rows="3" cols="22"></textarea>
-				<br/>
-				<input name="irudiaIgo"type="file" onchange="showMyImage(this)" />
-				<br/>
-				<img id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
-				<br/>
-				<input name="submitBtn" type="submit" value="Submit!" />
-			</form>
-		</article>
-		</center>
-    </section>
-	<footer class='main' id='f1'>
-		<a href='layout.html'>	<img src="image/home.png" alt="gohome" height="50" width="50"></a>
-		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
-		<a href='credits.html'>Credits</a>
-	</footer>
-</div>
+<body>
+
+	<section id="container">
+		<span class="chyron"><em><a href="layout.html">&laquo; atzera</a></em></span>
+		<h2>Zure datuak sartu</h2>
+		<form name="erregistro" id="hongkiat-form" action="php/Erregistratu.php" method="POST" onReset="reset()" onSubmit="ikusBalioak()" enctype="multipart/form-data">
+		<div id="wrapping" class="clearfix">
+			<section id="aligned">
+			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Jon" autocomplete="off" tabindex="1" class="txtinput" required>
+		
+			<p>Abizenak:</p><input type="text" name="ABIZENAK" id="name" placeholder="Adb:Egana Granado" autocomplete="off" tabindex="1" class="txtinput" pattern="([a-zA-z]*\s[a-zA-z]*)*" required>
+		
+			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" pattern="^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$" autocomplete="off" tabindex="2" class="txtinput" required>
+		
+			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" pattern=".{6,}"required autocomplete="off" tabindex="3" class="txtinput" required>
+		
+			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="telephone" placeholder="Adb:987654321" maxlength="9" tabindex="4" class="txtinput">
+			
+			<p>Interesa duzun teknologia:</p>
+			<textarea name="message" id="message" tabindex="5" class="txtblock"></textarea>
+			</section>
+			
+			<section id="aside" class="clearfix">
+				<section id="prioritycase">
+					<p>Espezialitatea:</p>
+					<span class="radiobadge">
+						<input type="radio" id="SI" name="ESPEZIALITATEA" onchange="besterik()" value="SI" checked>
+						<label for="SI">Software Ingeneritza</label>
+					</span>
+				
+					<span class="radiobadge">
+						<input type="radio" id="K" name="ESPEZIALITATEA" onchange="besterik()" value="K">
+						<label for="K">Konputazioa</label>
+					</span>
+				
+					<span class="radiobadge">
+						<input type="radio" id="KI" name="ESPEZIALITATEA" onchange="besterik()" value="KI">
+						<label for="KI">Konputagailuen Ingeniaritza</label>
+					</span>
+					
+					<span class="radiobadge">
+						<input type="radio" id="B" name="ESPEZIALITATEA" onchange="besterik()" value="B">
+						<label for="B">Besterik</label>
+					</span>
+					<input type="text" id="besterikTextarea" name="BTT"/>
+				    <br/>
+					<input name="irudiaIgo"type="file" onchange="showMyImage(this)" />
+					<img id="thumbnil" style="width:60%; height:60%; margin-top:10px;"  src="" alt="image"/>
+				</section>
+			</section>
+		</div>
+
+
+		<section id="buttons">
+			<input type="reset" name="reset" id="resetbtn" class="resetbtn" value="RESET">
+			<input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="SUBMIT">
+			<br style="clear:both;">
+		</section>
+		</form>
+	</section>
+
 </body>
 </html>
