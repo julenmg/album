@@ -11,7 +11,7 @@ $data = null;
 $check = getimagesize($_FILES["irudiaIgo"]["tmp_name"]);
 if($check !== false) {
      echo "File is an image - " . $check["mime"] . ".";
-     $imageFileType = pathinfo($_FILES["irudiaIgo"]["name"];
+     $imageFileType = pathinfo($_FILES["irudiaIgo"]["name"]);
 	 $uploadOk = 1;
 
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
