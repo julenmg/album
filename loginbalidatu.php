@@ -16,7 +16,7 @@
 			$erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA=$email" ;
 			$result = $dbLink->query($erabiltzaileak);
 
-			if($resul->num_rows == 1)
+			if($result->num_rows == 1)
 				header('Location: layoutLogIn.html');
 			else
 				echo "<h2> Emaila ez da datu basean existitzen</h2>";
