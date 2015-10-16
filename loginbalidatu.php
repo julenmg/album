@@ -13,7 +13,7 @@
 			
 		}else{
 			$dbLink = new mysqli("mysql.hostinger.es","u583754354_root","123456","u583754354_quizz");
-			$erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE EMAIL=$email" ;
+			$erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA=$email" ;
 			$result = $dbLink->query($erabiltzaileak);
 
 			if($resul->num_rows == 1)
