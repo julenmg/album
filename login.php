@@ -39,6 +39,7 @@
 									echo "<h2> Sartu duzun emaila ez da egokia</h2>";
 								}else{
 									$dbLink = new mysqli("mysql.hostinger.es","u583754354_root","123456","u583754354_quizz");
+									//$dbLink = new mysqli("localhost","root","","quiz");
 									$erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA='$email' AND PASAHITZA='$password'" ;
 									$result = $dbLink->query($erabiltzaileak);
 
