@@ -95,6 +95,16 @@ background: #fff url('images/user.png') 5px 4px no-repeat;
 #hongkiat-form input#telephone {
 background: #fff url('images/phone.png') 5px 4px no-repeat;
 }
+#hongkiat-form input#question{
+	background: #fff url('images/question.png') 5px 4px no-repeat;
+}
+#hongkiat-form input#answer{
+	background: #fff url('images/answer.png') 5px 4px no-repeat;
+}
+#hongkiat-form input#difficult_level{
+	background: #fff url('images/difficult_level.png') 5px 4px no-repeat;
+}
+
 #message{display:block;}
 #besterikTextarea{display:none;}
 #hongkiat-form textarea {

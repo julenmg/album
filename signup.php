@@ -14,7 +14,7 @@
 <body>
 
 	<section id="container">
-		<span class="chyron"><em><a href="layout.html">&laquo; atzera</a></em></span>
+		<span class="chyron"><em><a href="layout.php">&laquo; atzera</a></em></span>
 		<h2>Zure datuak sartu</h2>
 		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
 		<div id="wrapping" class="clearfix">

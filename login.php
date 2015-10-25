@@ -13,15 +13,15 @@
 <body>
 
 	<section id="container">
-		<span class="chyron"><em><a href="layout.html">&laquo; atzera</a></em></span>
+		<span class="chyron"><em><a href="layout.php">&laquo; atzera</a></em></span>
 		<h2>Zure datuak sartu</h2>
 		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="POST"  >
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
 
-			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" class="txtinput" >
+			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="1" class="txtinput" >
 		
-			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" pattern=".{6,}"required autocomplete="off" tabindex="3" class="txtinput" required>
+			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" pattern=".{6,}"required autocomplete="off" tabindex="2" class="txtinput" required>
 
 			</section>
 			
@@ -38,6 +38,7 @@
 								if (!preg_match( $regex, $email ) ){
 									echo "<h2> Sartu duzun emaila ez da egokia</h2>";
 								}else{
+			
 									require 'php/login_prozezatu.php';
 								}
 							}

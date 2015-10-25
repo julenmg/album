@@ -14,10 +14,7 @@
 <body>
 
 	<section id="container">
-		<?php
-			include "php/atzera.php";
-
-		?>
+		<span class='chyron'><em><a href='layout.php'>&laquo; atzera</a></em></span>
 		<h2>Galdera guztiak</h2>
 		<center style="font-size: 1.7em;" >
 		<?php

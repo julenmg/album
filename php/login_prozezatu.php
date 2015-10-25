@@ -3,7 +3,6 @@
 require 'konexioa.php';
 
 session_start();
-$error = '';
 
 // To protect MySQL injection for Security purpose
 $email = stripslashes($email);
@@ -16,12 +15,18 @@ $erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA='$email' AND PASAHITZ
 $result = $dblink->query($erabiltzaileak);
 
 	if($result->num_rows == 1){
+		$data= date('Y/m/d G:i:s');
+		$_SESSION['konexio_data']=$data;
+		$konexioa="INSERT INTO konexioa (ID,POSTA,ORDUA) VALUES('','{$email}','{$data}')";
+		$dblink->query($konexioa);
+		
 		$_SESSION['login_email']=$email;
-		header("Location: ./layoutBalidatuta.html");
+		
+		header("Location: ./layout.php");
 		exit;
 	}
 	else{
-		$error = "Sartutako posta edo pasahitza ez da egokia";
+		echo "<h2>Sartutako posta edo pasahitza ez da egokia</h2>";
 	}
 
 require 'deskonexioa.php';
