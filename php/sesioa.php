@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -31,18 +32,17 @@ function mainMenua(){
 
 function ekintza($mota,$dblink){
 	$data = "";
-	$email = "";
+	$email = "ANONIMOA";
 	$id = "";
 	if(isset($_SESSION['login_email'])){
 		$email = $_SESSION['login_email'];
 		$data = $_SESSION['konexio_data'];
-		$sql = "SELECT * FROM KONEXIOA WHERE ORDUA='{$data}';";
-		if($dblink->query($sql)) {
-		echo 'Errore bat konexioaren id lortu nahi denean';
-		}else{
-			$row = $result->fetch_array(MYSQLI_BOTH);
-			$id=  $row['ID'];
+		$sql = "SELECT * FROM KONEXIOA WHERE POSTA='{$email}' AND ORDUA='{$data}';";
+		$result = $dblink->query($sql);
+		if(!$result){
+			echo "Errore bat egon da konexioaren id lortzeko";
 		}
+		$id=  $result['ID'];	
 	}
 	
 	$ip = get_bezeroaren_ip();
@@ -53,11 +53,11 @@ function ekintza($mota,$dblink){
 	}
 
 	$ekintza = "INSERT INTO EKINTZA () VALUES('','$id','$email','$mota','$ordua','$ip');";
-	
-	if($dblink->query($ekintza)) {
-		echo 'Errore bat egon da ekintza gehitzerakoan'
-               . $dblink->error;
+	$result = $dblink->query($ekintza);
+	if(!$result){
+		echo "Ekintzarik ez da gehitu";
 	}
+	
 }
 
 function get_bezeroaren_ip() {
@@ -81,3 +81,4 @@ function get_bezeroaren_ip() {
 }
 
 ?>
+
