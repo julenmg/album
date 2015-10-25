@@ -42,7 +42,8 @@ function ekintza($mota,$dblink){
 		if(!$result){
 			echo "Errore bat egon da konexioaren id lortzeko";
 		}
-		$id=  $result['ID'];	
+		$ema = $result->fetch_array(MYSQLI_BOTH);
+		$id = $row['ID'];
 	}
 	
 	$ip = get_bezeroaren_ip();

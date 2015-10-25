@@ -15,7 +15,7 @@
 
 	<section id="container">
 		<span class='chyron'><em><a href='layout.php'>&laquo; atzera</a></em></span>
-		<h2>Galdera guztiak</h2>
+		<h2>Erabiltzaileak</h2>
 		<center style="font-size: 1.7em;" >
 		<?php
 			include "php/ikuserabiltzaileak.php";
