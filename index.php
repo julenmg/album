@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php include "php/sesioa.php";?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
-	<title>Quizzes</title>
+	<title>Home</title>
     <link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />
 	<link rel='stylesheet' 
 		   type='text/css' 
@@ -16,16 +17,11 @@
   <body>
   <div id='page-wrap'>
 	<header class='main' id='h1'>
-      <span class="right" style="display:none;"><a href="/login">Login</a></span> |
-	  <span class="right" style="display:none;"><a href="signup.html">SignUp</a></span>
-      <span class="right" style="display:block;"><a href="php/logout.php">Logout</a></span>
+		<?php goikoMenua();?>
 	<h2>Quiz: crazy questions</h2>
     </header>
 	<nav class='main' id='n1' role='navigation'>
-		<span><a href='layout.html'>Home</a></span>
-		<span><a href='insertquestion.php'>Insert question</a></span>
-		<span><a href='credits.html'>Credits</a></span>
-		<span><a href='quiz.php'>quiz</a></span>
+		<?php mainMenua();?>
 	</nav>
     <section class="main" id="s1">
 	<center>

@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -8,24 +7,25 @@ function goikoMenua(){
 		echo "<span class='right' style='display:block;'><a href='php/logout.php'>Logout</a></span>";
 	}
 	else{
-		echo "<span class='right'><a href='login.php'>Login</a></span> | ";
-		echo "<span class='right'><a href='signup.php'>SignUp</a></span>";
+		echo "<span class='right'><a href='login'>Login</a></span> | ";
+		echo "<span class='right'><a href='signup'>SignUp</a></span>";
 	}
 }
 
 function mainMenua(){
 
 	if(isset($_SESSION['login_email'])){
-		echo "<span><a href='./layout.php'>Home</a></span> | ";
-		echo "<span><a href='./insertquestion.php'>Insert Question</a></span> | ";
-		echo "<span><a href='./credits.php'>Credits</a></span> | ";
-		echo "<span><a href='./quiz.php'>Quiz</a></span>";
+		echo "<span><a href='./'>Home</a></span> | ";
+		echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
+		echo "<span><a href='credits'>Credits</a></span> | ";
+		echo "<span><a href='seeXMLQuestions'>See XML Questions</a></span> | ";
+		echo "<span><a href='quiz'>Quiz</a></span>";
 	
 	}
 	else{
-		echo "<span><a href='./layout.php'>Home</a></span> | ";
-		echo "<span><a href='./credits.php'>Credits</a></span> | ";
-		echo "<span><a href='./quiz.php'>Quiz</a></span>";
+		echo "<span><a href=''>Home</a></span> | ";
+		echo "<span><a href='credits'>Credits</a></span> | ";
+		echo "<span><a href='quiz'>Quiz</a></span>";
 
 	}
 }
@@ -43,7 +43,7 @@ function ekintza($mota,$dblink){
 			echo "Errore bat egon da konexioaren id lortzeko";
 		}
 		$ema = $result->fetch_array(MYSQLI_BOTH);
-		$id = $ema['ID'];
+		$id=  $ema['ID'];	
 	}
 	
 	$ip = get_bezeroaren_ip();
@@ -82,4 +82,3 @@ function get_bezeroaren_ip() {
 }
 
 ?>
-

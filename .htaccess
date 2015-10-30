@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /lab1/
+RewriteRule ^/$ index.php [L]
+RewriteRule ^credits$ credits.php [L]
+RewriteRule ^insertquestion$ insertquestion.php [L]
+RewriteRule ^seeXMLQuestions$ seeXMLQuestions.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^quiz$ quiz.php [L]
+RewriteRule ^signup$ signup.php [L]
+RewriteRule ^erregistroakikusi$ erregistroakikusi.php [L]
+RewriteRule ^getUserInform$ getUserInform.php [L]
+

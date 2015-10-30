@@ -36,7 +36,7 @@
 	<footer class='main' id='f1'>
 		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
 		<a href='credits.php'>Credits</a>
-		<a href='layout.php'>Home</a>
+		<a href='./'>Home</a>
 	</footer>
 </div>
 </body>

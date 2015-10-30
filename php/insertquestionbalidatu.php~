@@ -10,25 +10,19 @@ $sql="INSERT INTO GALDERA () VALUES('','{$galdera}','{$erantzuna}','{$zailtasuna
 
 $result = $dblink->query($sql);
 if($result) {
-	$file = 'xml/galderak.xml';
-	$xml = simplexml_load_file($file); 
-	
+
+	$xml = simplexml_load_file('php/galderak.xml');
 	$assessmentItem = $xml->addChild('assessmentItem');
+
 	$assessmentItem-> addAttribute('complexity',$zailtasuna);	
 	$assessmentItem-> addAttribute('subject','Mikologia');
 	$itemBody= $assessmentItem-> addChild('itemBody');
 	$correctResponse= $assessmentItem-> addChild('correctResponse');
 	$itemBody-> addChild('p',$galdera);
 	$correctResponse-> addChild('value',$erantzuna);
-	//$assessmentItem->$itemBody;
-	//$assessmentItem->$correctResponse;
-	//$xml->$assessmentItem;
-	
-	$ondoTxertatuDa = file_put_contents($file, $xml->asXML());
-	if($ondoTxertatuDa)
-		echo '<h2>XML-n ondo txertatu da</h2>';
-	else
-		echo 'Arazo bat egonda txertaketan';
+
+	$xml->asXML();
+	//$root = new SimpleXMLElement($xml->asXML());
 	echo '<h2>Zure galdera gehitu da</h2>';
 }else{
 	echo '<h2>Errore bat egon da zure galdera gehitzerakoan</h2>'
@@ -36,4 +30,3 @@ if($result) {
 }
 require ("php/deskonexioa.php");
 ?>
-,

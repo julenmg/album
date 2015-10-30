@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Formularioa</title>
+  <title>Erregistratu</title>
   <meta name="author" content="Jake Rocheleau">
   <link rel="icon" href="stylesPWS\images\form.png">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
@@ -14,7 +14,7 @@
 <body>
 
 	<section id="container">
-		<span class="chyron"><em><a href="layout.php">&laquo; atzera</a></em></span>
+		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
 		<h2>Zure datuak sartu</h2>
 		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
 		<div id="wrapping" class="clearfix">
