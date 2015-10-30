@@ -7,8 +7,8 @@ session_start();
 // To protect MySQL injection for Security purpose
 $email = stripslashes($email);
 $password = stripslashes($password);
-$email = mysql_real_escape_string($email);
-$password = mysql_real_escape_string($password);
+$email = mysqli_real_escape_string($dblink,$email);
+$password = mysqli_real_escape_string($dblink,$password);
 
 
 $erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA='$email' AND PASAHITZA='$password'" ;
