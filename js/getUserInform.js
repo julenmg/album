@@ -3,7 +3,7 @@ function osatu(){
  var dago=false;
  var xmlDoc = document.getElementById('datuak').contentDocument;
  var kor = document.getElementById('email').value;
- var erabiltzaileakZer=xmlDoc.getElementsByTagName('erabiltzaileak');
+ var erabiltzaileakZer=xmlDoc.getElementsByTagName('erabiltzailea');
  
  var izenZer=xmlDoc.getElementsByTagName('izena');
  var abizen1Zer=xmlDoc.getElementsByTagName('abizena1');
@@ -18,14 +18,11 @@ var kor2 = y[1].childNodes[0].childNodes[0].nodeValue;
 
 for(i = 1; i < y.length; i++) {
  if (kor==kor2){
-	alert(y[i].childNodes[1].childNodes[0].nodeValue);
-	alert(y[i].childNodes[2].childNodes[0].nodeValue);
-	alert(y[i].childNodes[3].childNodes[0].nodeValue);
-	alert(y[i].childNodes[4].childNodes[0].nodeValue);
-	document.getElementByName('IZENA').value=y[i].childNodes[1].childNodes[0].nodeValue;
-	document.getElementByName('ABIZEN1').value=y[i].childNodes[2].childNodes[0].nodeValue;
-	document.getElementByName('ABIZEN2').value=y[i].childNodes[3].childNodes[0].nodeValue;
-	document.getElementByName('TELEFONOA').value=y[i].childNodes[4].childNodes[0].nodeValue;
+
+	document.getElementById('name').value=y[i].childNodes[1].childNodes[0].nodeValue;
+	document.getElementById('surname1').value=y[i].childNodes[2].childNodes[0].nodeValue;
+	document.getElementById('surname2').value=y[i].childNodes[3].childNodes[0].nodeValue;
+	document.getElementById('telephone').value=y[i].childNodes[4].childNodes[0].nodeValue;
 	
 	dago=true;
 	break;

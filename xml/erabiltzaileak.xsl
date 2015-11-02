@@ -6,14 +6,16 @@
 	<tr>
 		<th>Eposta</th>
 		<th>Izena</th>
-		<th>Abizenak</th>
+		<th>Abizena1</th>
+		<th>Abizena2</th>
 	<th>Telefonoa</th>
 	</tr>
 	<xsl:for-each select="erabiltzaileak/erabiltzailea">
 	<tr>
 		<td><xsl:value-of select="eposta"/></td>
 		<td><xsl:value-of select="izena"/></td>
-		<td><xsl:value-of select="abizena1"/>,<xsl:value-of select="abizena2"/></td>
+		<td><xsl:value-of select="abizena1"/></td>
+		<td><xsl:value-of select="abizena2"/></td>
 		<td><xsl:value-of select="telefonoa"/></td>
 	</tr>
 	</xsl:for-each>

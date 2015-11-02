@@ -25,11 +25,11 @@
 
 			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Jon" autocomplete="on" tabindex="1" class="txtinput">
 		
-			<p>Abizena1:</p><input type="text" name="ABIZEN1" id="name" placeholder="Adb:Egana" autocomplete="on" tabindex="1" class="txtinput">
+			<p>Abizena1:</p><input type="text" name="ABIZEN1" id="surname1" placeholder="Adb:Egana" autocomplete="on" tabindex="1" class="txtinput">
 
-			<p>Abizena2:</p><input type="text" name="ABIZEN2" id="name" placeholder="Adb:Granado" autocomplete="on" tabindex="1" class="txtinput">
+			<p>Abizena2:</p><input type="text" name="ABIZEN2" id="surname2" placeholder="Adb:Granado" autocomplete="on" tabindex="1" class="txtinput">
 		
-			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="tel" placeholder="Adb:687654321" pattern=".{9,9}"required autocomplete="on" tabindex="2" class="txtinput" required>
+			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="telephone" placeholder="Adb:687654321" pattern=".{9,9}"required autocomplete="on" tabindex="2" class="txtinput" required>
 
 			<h2 id="erreg"></h2>
 			</section>
