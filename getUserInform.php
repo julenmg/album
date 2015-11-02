@@ -8,22 +8,30 @@
   <link rel="icon" href="stylesPWS\images\form.png">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
+  <script type="text/javascript" src="js/getUserInform.js"></script>
  </head>
 
 <body>
-
+//action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
 		<h2>Buscar teléfono ...</h2>
 <OBJECT id="datuak" data="xml/erabiltzaileak.xml" type="text/xml" style="display:none"> </OBJECT>
-		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="POST"  >
+		<form name="erregistro" id="hongkiat-form"   method="POST"  autocomplete="on">
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
 
 			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="1" class="txtinput" >
-		
-			<p>Telefonoa:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" pattern=".{6,}"required autocomplete="off" tabindex="2" class="txtinput" required>
 
+			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Jon" autocomplete="on" tabindex="1" class="txtinput">
+		
+			<p>Abizena1:</p><input type="text" name="ABIZEN1" id="name" placeholder="Adb:Egana" autocomplete="on" tabindex="1" class="txtinput">
+
+			<p>Abizena2:</p><input type="text" name="ABIZEN2" id="name" placeholder="Adb:Granado" autocomplete="on" tabindex="1" class="txtinput">
+		
+			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="tel" placeholder="Adb:687654321" pattern=".{9,9}"required autocomplete="on" tabindex="2" class="txtinput" required>
+
+			<h2 id="erreg"></h2>
 			</section>
 		
 		</div>

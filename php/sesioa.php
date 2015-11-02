@@ -25,6 +25,7 @@ function mainMenua(){
 	else{
 		echo "<span><a href=''>Home</a></span> | ";
 		echo "<span><a href='credits'>Credits</a></span> | ";
+		echo "<span><a href='getUserInform'>Get User Inform</a></span> | ";
 		echo "<span><a href='quiz'>Quiz</a></span>";
 
 	}
