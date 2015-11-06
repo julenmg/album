@@ -19,7 +19,8 @@ function mainMenua(){
 		echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
 		echo "<span><a href='credits'>Credits</a></span> | ";
 		echo "<span><a href='seeXMLQuestions'>See XML Questions</a></span> | ";
-		echo "<span><a href='quiz'>Quiz</a></span>";
+		echo "<span><a href='quiz'>Quiz</a></span> | ";
+		echo "<span><a href='handlingQuizzes'>Handling Quizzes</a></span>";
 	
 	}
 	else{

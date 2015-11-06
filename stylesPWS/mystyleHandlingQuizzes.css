@@ -1,0 +1,24 @@
+#container { 
+
+display: block;
+max-width: 900px;
+margin-top: 5px; 
+margin-bottom: 66px;
+padding: 20px 15px; 
+background-color: rgb(250,250,250); opacity: 0.85;
+border-radius: 6px; 
+-webkit-border-radius: 6px; 
+-moz-border-radius: 6px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box; 
+box-sizing: border-box;  
+}
+#hongkiat-form #aside1 {
+	float:left;
+	width: 350px;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#erakutsiGalderak {font-size: 1.6em;}
+#erakutsiGalderak h2 {font-size: 1.3em;}

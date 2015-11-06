@@ -10,15 +10,10 @@ function osatu(){
  var abizen2Zer=xmlDoc.getElementsByTagName('abizena2');
  var tfnoZer=xmlDoc.getElementsByTagName('telefonoa');
 
-x = xmlDoc.documentElement;
 y = xmlDoc.documentElement.childNodes;
 
-var kor2 = y[1].childNodes[0].childNodes[0].nodeValue;
-//alert(y[1].childNodes[0].childNodes[0].nodeValue);
-
-for(i = 1; i < y.length; i++) {
- if (kor==kor2){
-
+for(i = 0; i < y.length; i++) {
+ if (kor==y[i].childNodes[0].childNodes[0].nodeValue){
 	document.getElementById('name').value=y[i].childNodes[1].childNodes[0].nodeValue;
 	document.getElementById('surname1').value=y[i].childNodes[2].childNodes[0].nodeValue;
 	document.getElementById('surname2').value=y[i].childNodes[3].childNodes[0].nodeValue;
@@ -27,45 +22,20 @@ for(i = 1; i < y.length; i++) {
 	dago=true;
 	break;
 	}
-	kor2 = y[i].childNodes[0].childNodes[0].nodeValue;
 	//alert(y[i].childNodes[0].childNodes[0].nodeValue);
  }
 
 
-
-//alert( "Nodename: " + y[i].nodeName + " (value: " + y[i].childNodes[0].nodeValue + ")<br>")for(z = 0; z < y[i].childNodes.length; z++) alert( "Nodename: " + y[i].childNodes[0].nodeName + " (value: " + y[i].childNodes[0].childNodes[0].nodeValue + ")<br>");
-//alert ("Nodename: " + z[0].nodeValue);
-
-/*
- var erabiltzaileaZer=erabiltzaileakZer.childNodes[0];
-
- var epostenZer=erabiltzaileaZer.childNodes[0];
-
- if (kor==epostenZer) {     // Internet Explorer
-                alert ("An element exists with myAnchor ID (or name).");
-            }
-            else {      // Firefox, Opera, Google Chrome and Safari
-                alert ("No element exists with myAnchor ID (or name).");
-            }
- for (var i = 0; i < var erabiltzaileaZer.length; i++) {
-	
- if (kor==){
-	document.getElementByName('IZENA').value=izenZer[i].childNodes[0].nodeValue;
-	document.getElementByName('ABIZEN1').value=abizen1Zer[i].childNodes[0].nodeValue;
-	document.getElementByName('ABIZEN2').value=abizen2Zer[i].childNodes[0].nodeValue;
-	document.getElementByName('TELEFONOA').value=tfnoZer[i].childNodes[0].nodeValue;
-
-	dago=true;
-	break;
-	}
- }*/
-document.getElementById('erreg').style.display = 'block' ;
  if (!dago){
 	document.getElementById('erreg').value = "Eposta hau ez dago UPV/EHUn erregistraturik. Sar ezazu beste bat";
+	
  }else{
+	 
 	document.getElementById('erreg').value = "Erregistratuta";
 
  }
+  alert(document.getElementById('erreg').value );
+ document.getElementById('erreg').style.display = 'block' ;
  
 }
 

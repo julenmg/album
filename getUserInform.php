@@ -12,7 +12,7 @@
  </head>
 
 <body>
-//action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
 		<h2>Buscar teléfono ...</h2>
@@ -31,9 +31,13 @@
 		
 			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="telephone" placeholder="Adb:687654321" pattern=".{9,9}"required autocomplete="on" tabindex="2" class="txtinput" required>
 
-			<h2 id="erreg"></h2>
+			
 			</section>
-		
+			<section id="aside" class="clearfix">
+				<section id="prioritycase">
+					<h2 id="erreg" style="display:none"></h2>
+				</section>
+			</section>
 		</div>
 
 
