@@ -10,8 +10,9 @@
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyleHandlingQuizzes.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
     <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/galderak.js"></script>
  </head>
-<body>
+<body onload="galderakErakutsi()">
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
 		<h2>Galdera sortu/editatu/ikusi</h2>
@@ -37,6 +38,16 @@
 				</section>
 					<section id="erakutsiGalderak">
 		
+				</section>
+			</section>
+			<section id="aside2" class="clearfix">
+				<section id="prioritycase2">
+					
+			
+				</section>
+					<section id="erakutsiGalderak2">
+
+					
 				</section>
 			</section>
 
