@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyleHandlingQuizzes.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
     <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/galderak.js"></script>
  </head>
 <body onload="galderakErakutsi()">
 	<section id="container">
@@ -33,24 +32,15 @@
 			</section>
 			<section id="aside1" class="clearfix">
 				<section id="prioritycase">
-					
+					<div style="float: left">Nire galderak/Galderak guztira DB: </div>
+					<div id="gald"></div>	
 			
 				</section>
 					<section id="erakutsiGalderak">
 		
 				</section>
 			</section>
-			<section id="aside2" class="clearfix">
-				<section id="prioritycase2">
-					
 			
-				</section>
-					<section id="erakutsiGalderak2">
-
-					
-				</section>
-			</section>
-
 		</div>
 		
 		</form>

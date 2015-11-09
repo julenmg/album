@@ -11,7 +11,7 @@ $ema = $dblink->query($galdera);
 $cont= 0;
 while( $row = $ema->fetch_array(MYSQLI_BOTH)) {
 
-	'<tr><td>'.$row['ID'].'</td> <td>'.$row['GALDERA'].'</td> <td>'.$row['ERANTZUNA'].'</td> <td>'.$row['ZAILTASUNA'].'</td></tr>';
+	
 	$cont=$cont+1;
 }
 $galdera1 = "SELECT * FROM GALDERA" ;
@@ -19,10 +19,11 @@ $ema1 = $dblink->query($galdera1);
 $cont1= 0;
 while( $row1 = $ema1->fetch_array(MYSQLI_BOTH)) {
 
-	'<tr><td>'.$row1['ID'].'</td> <td>'.$row1['GALDERA'].'</td> <td>'.$row1['ERANTZUNA'].'</td> <td>'.$row1['ZAILTASUNA'].'</td></tr>';
+	
 	$cont1=$cont1+1;
 }
+ 
+echo $cont."/".$cont1;
 
-echo "<h2>Nire galderak/Galderak guztira DB:  $cont/$cont1</h2>";
 include "deskonexioa.php";
 ?>

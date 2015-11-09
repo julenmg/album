@@ -2,8 +2,7 @@ XMLHttpRequestObject = new XMLHttpRequest();
 
 function galderakIkusi(){
 	XMLHttpRequestObject.onreadystatechange = function(){
-		
-		document.getElementById("prioritycase").innerHTML="";
+
 		document.getElementById("erakutsiGalderak").innerHTML="";
 		//alert(XMLHttpRequestObject.readyState);
 		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
@@ -19,11 +18,10 @@ function galderaSortu(galdera,erantzuna,zailtasuna){
 		alert("Galdera edo erantzuna hutsik");
 }else{
 	XMLHttpRequestObject.onreadystatechange = function(){
-		document.getElementById("prioritycase").innerHTML="";
 		document.getElementById("erakutsiGalderak").innerHTML="";
 		//alert(XMLHttpRequestObject.readyState);
 		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
-			document.getElementById("prioritycase").innerHTML=XMLHttpRequestObject.responseText;
+			document.getElementById("erakutsiGalderak").innerHTML=XMLHttpRequestObject.responseText;
 		}
 	}
 	XMLHttpRequestObject.open("GET","./php/insertquestionAJAX.php?GALDERA="+galdera+"&ERANTZUNA="+erantzuna+"&ZAILTASUNA="+zailtasuna, true);
@@ -33,7 +31,6 @@ function galderaSortu(galdera,erantzuna,zailtasuna){
 
 function galderaEditatu(id,galdera,erantzuna,zailtasuna){
 	XMLHttpRequestObject.onreadystatechange = function(){
-		document.getElementById("prioritycase").innerHTML="";
 		document.getElementById("erakutsiGalderak").innerHTML="";
 		//alert(XMLHttpRequestObject.readyState);
 		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
@@ -42,4 +39,23 @@ function galderaEditatu(id,galdera,erantzuna,zailtasuna){
 	}
 	XMLHttpRequestObject.open("GET","./php/editquestionAJAX.php?GALDERA_ID="+id+"&GALDERA="+galdera+"&ERANTZUNA="+erantzuna+"&ZAILTASUNA="+zailtasuna, true);
 	XMLHttpRequestObject.send();
+}
+
+
+function x(){
+
+XMLHttpRequestObject.onreadystatechange = function(){
+
+		document.getElementById("gald").innerHTML="";
+		//alert(XMLHttpRequestObject.readyState);
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("gald").innerHTML=XMLHttpRequestObject.responseText;
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/quizzesGalderak.php", true);
+	XMLHttpRequestObject.send();
+}
+function galderakErakutsi(){
+x();
+setInterval(x, 5000);
 }
