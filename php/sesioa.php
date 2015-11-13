@@ -8,7 +8,8 @@ function goikoMenua(){
 	}
 	else{
 		echo "<span class='right'><a href='login'>Login</a></span> | ";
-		echo "<span class='right'><a href='signup'>SignUp</a></span>";
+		echo "<span class='right'><a href='signup'>SignUp</a></span> | ";
+		echo "<span class='right'><a href='simplesignup'>SimpleSignUp</a></span>";
 	}
 }
 

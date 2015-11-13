@@ -41,13 +41,12 @@ function galderaEditatu(id,galdera,erantzuna,zailtasuna){
 	XMLHttpRequestObject.send();
 }
 
-
+//Galderak erakusteko bi funtzio
 function x(){
 
 XMLHttpRequestObject.onreadystatechange = function(){
 
 		document.getElementById("gald").innerHTML="";
-		//alert(XMLHttpRequestObject.readyState);
 		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
 			document.getElementById("gald").innerHTML=XMLHttpRequestObject.responseText;
 		}
@@ -58,4 +57,36 @@ XMLHttpRequestObject.onreadystatechange = function(){
 function galderakErakutsi(){
 x();
 setInterval(x, 5000);
+}
+
+//Sartutako eposta ea matrikulatua dagoen konprobatu
+function epostaKonprobatu(eposta){
+	XMLHttpRequestObject.onreadystatechange = function(){
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("epostamezua").innerHTML=XMLHttpRequestObject.responseText;
+			//botoiagaitu();
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/epostaKonprobatuAJAX.php?EPOSTA="+eposta, true);
+	XMLHttpRequestObject.send();
+}	
+
+//Sartutako pasahitza ea baliozkoa den
+function pasahitzaKonprobatu(pasashitza){
+	XMLHttpRequestObject.onreadystatechange = function(){
+		
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("passmezua").innerHTML=XMLHttpRequestObject.responseText;
+			//botoiagaitu();
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/pasahitzaKonprobatuAJAX.php?PASAHITZA="+pasashitza, true);
+	XMLHttpRequestObject.send();
+}
+
+function botoiagaitu(){
+
+	var botoia = document.getElementById("submitbtn");
+	var pasaerantzun = document.getElementById("passerantzuna");
+	var epostaerantzun = document.getElementById("epostaerantzuna");
 }

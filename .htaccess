@@ -11,5 +11,6 @@ RewriteRule ^signup$ signup.php [L]
 RewriteRule ^erregistroakikusi$ erregistroakikusi.php [L]
 RewriteRule ^getUserInform$ getUserInform.php [L]
 RewriteRule ^handlingQuizzes$ handlingQuizzes.php [L]
+RewriteRule ^simplesignup$ simplesignup.php [L]
 
 

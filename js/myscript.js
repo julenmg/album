@@ -37,11 +37,6 @@ function balidatzen(){
 	return true;
 }
 
-//html5ko inputak balidatzen
-function konprobatu(){
-	alert("dfasfsd");
-		
-}
 
 //Dena ballidatuta dagoenean alert bat agertuko da datu guztiak erakutsiz
 function ikusBalioak(){
