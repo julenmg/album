@@ -12,8 +12,9 @@
 		   type='text/css' 
 		   media='only screen and (max-width: 480px)'
 		   href='stylesPWS/smartphone.css' />
+	<script type="text/javascript" src="js/geolokalizazioa.js"></script>
   </head>
-  <body>
+  <body onload="javascript:initGeolocation()">
   <div id='page-wrap'>
 	<header class='main' id='h1'>
     <?php
@@ -29,7 +30,10 @@
 			<h3>Nire datuak</h3>
 			<p>Deiturak: Jon Egaña</p>
 			<p>Espezialitatea: Software Ingeniaritza</p>
-			<img src="image/image1.jpg" alt="Smiley face" height="200" width="400">
+			<img src="image/image1.jpg" alt="Smiley face" height="200" width="400"/>
+			<div id="map" style="{width:100px;height:100px;}">
+				<img id="static-map" />
+			</div> 
 		</article>
 	</center>
 	</section>

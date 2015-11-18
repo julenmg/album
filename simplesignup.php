@@ -11,7 +11,7 @@
     <script type="text/javascript" src="js/ajax.js"></script>
  </head>
 
-<body onload="botoiagaitu()">
+<body>
 
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
@@ -19,8 +19,9 @@
 		<form name="erregistro" id="hongkiat-form" method="GET" enctype="multipart/form-data">
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
-			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="2" class="txtinput" onChange="epostaKonprobatu(email.value)"> 
-			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" autocomplete="off" tabindex="3" class="txtinput" onChange="pasahitzaKonprobatu(password.value)">
+			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="1" class="txtinput" onChange="epostaKonprobatu(email.value)"> 
+			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" autocomplete="off" tabindex="2" class="txtinput" >
+			<p>Tiketa:</p><input type="text" name="TIKETA" id="tiketa" placeholder="Adb:1234" autocomplete="off" tabindex="3" class="txtinput" >
 
 			</section>
 			
@@ -37,7 +38,7 @@
 		</div>
 
 		<section id="buttons">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="SUBMIT" style="display:none;">
+			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="KONPROBATU" onclick="konprobatu()">
 			<br style="clear:both;">
 		</section>
 		</form>

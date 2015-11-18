@@ -33,7 +33,7 @@
 							if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								$email = $_POST['POSTA'];
 								$password = $_POST['PASAHITZA'];
-								$regex = "/^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$/"; 
+								$regex = "/^[a-z]*[0-9]{3}(\@irakasle|\@ikasle)\.ehu(\.es|\.eus)$/"; 
 			 
 								if (!preg_match( $regex, $email ) ){
 									echo "<h2> Sartu duzun emaila ez da egokia</h2>";

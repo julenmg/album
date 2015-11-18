@@ -72,7 +72,7 @@ function epostaKonprobatu(eposta){
 }	
 
 //Sartutako pasahitza ea baliozkoa den
-function pasahitzaKonprobatu(pasashitza){
+function pasahitzaKonprobatu(pasashitza,tiketa){
 	XMLHttpRequestObject.onreadystatechange = function(){
 		
 		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
@@ -80,13 +80,20 @@ function pasahitzaKonprobatu(pasashitza){
 			//botoiagaitu();
 		}
 	}
-	XMLHttpRequestObject.open("GET","./php/pasahitzaKonprobatuAJAX.php?PASAHITZA="+pasashitza, true);
+	XMLHttpRequestObject.open("GET","./php/pasahitzaKonprobatuAJAX.php?PASAHITZA="+pasashitza+"&TIKETA="+tiketa, true);
 	XMLHttpRequestObject.send();
 }
 
-function botoiagaitu(){
+function konprobatu(){
 
-	var botoia = document.getElementById("submitbtn");
-	var pasaerantzun = document.getElementById("passerantzuna");
-	var epostaerantzun = document.getElementById("epostaerantzuna");
+	document.getElementById("passmezua").innerHTML="";
+	var pasaerantzun = document.getElementById("password");
+	var epostaerantzun = document.getElementById("email");
+	var tiketa = document.getElementById("tiketa");
+	
+	if(pasaerantzun.value=="" || epostaerantzun.value=="" || tiketa.value==""){
+		document.getElementById("passmezua").innerHTML="Bete datuak!";
+	}else{
+		pasahitzaKonprobatu(pasaerantzun.value,tiketa.value);
+	}
 }

@@ -15,19 +15,21 @@ function goikoMenua(){
 
 function mainMenua(){
 
+	echo "<span><a href='./'>Home</a></span> | ";
+	echo "<span><a href='credits'>Credits</a></span> | ";
 	if(isset($_SESSION['login_email'])){
-		echo "<span><a href='./'>Home</a></span> | ";
-		echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
-		echo "<span><a href='credits'>Credits</a></span> | ";
-		echo "<span><a href='seeXMLQuestions'>See XML Questions</a></span> | ";
-		echo "<span><a href='quiz'>Quiz</a></span> | ";
-		echo "<span><a href='handlingQuizzes'>Handling Quizzes</a></span>";
+		if($_SESSION['login_rol']=="ika"){
+			echo "<span><a href='seeXMLQuestions'>See XML Questions</a></span> | ";
+			echo "<span><a href='quiz'>Quiz</a></span> | ";
+			echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
+			echo "<span><a href='handlingQuizzes'>Handling Quizzes</a></span>";
+		}else{
+			echo "<span><a href='reviewingQuizzes'>Reviewing Quizzes</a></span> | ";
+			echo "<span><a href='getUserInform'>Get User Inform</a></span> ";
+
+		}	
 	
-	}
-	else{
-		echo "<span><a href=''>Home</a></span> | ";
-		echo "<span><a href='credits'>Credits</a></span> | ";
-		echo "<span><a href='getUserInform'>Get User Inform</a></span> | ";
+	}else{
 		echo "<span><a href='quiz'>Quiz</a></span>";
 
 	}

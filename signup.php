@@ -69,7 +69,7 @@
 								$telefonoa = $_POST['TELEFONOA'];
 								$espezialitatea = $_POST['ESPEZIALITATEA'];
 								$regex1 = "/([a-zA-z]*\s[a-zA-z]*)*/";
-								$regex2 = "/^[a-z]*[0-9]{3}\@ikasle\.ehu(\.es|\.eus)$/";
+								$regex2 = "/^[a-z]*[0-9]{3}(\@irakasle|\@ikasle)\.ehu(\.es|\.eus)$/";
 								$datuokerrakMezua = "";
 			 
 								if($izena == ""){

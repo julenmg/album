@@ -9,6 +9,7 @@ $email = stripslashes($email);
 $password = stripslashes($password);
 $email = mysqli_real_escape_string($dblink,$email);
 $password = mysqli_real_escape_string($dblink,$password);
+$regex = "/^[a-z]*[0-9]{3}\@irakasle\.ehu(\.es|\.eus)$/";
 
 
 $erabiltzaileak = "SELECT * FROM ERABILTZAILEA WHERE POSTA='$email' AND PASAHITZA='$password'" ;
@@ -21,6 +22,11 @@ $result = $dblink->query($erabiltzaileak);
 		$dblink->query($konexioa);
 		
 		$_SESSION['login_email']=$email;
+		if (!preg_match( $regex, $email ) ){
+			$_SESSION['login_rol']="ika";
+		}else{
+			$_SESSION['login_rol']="ira";
+		}
 		
 		header("Location: ./");
 		exit;
