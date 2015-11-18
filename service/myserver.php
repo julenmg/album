@@ -4,8 +4,8 @@ require_once ('../php/lib/nusoap.php');
 require_once('../php/lib/class.wsdlcache.php'); 
 
 
-$ns="http://localhost/lab1/service/myserver.php?wsdl";  //nameof the service
-//$ns="http://wsjulenjon.hol.es/lab1/service/myserver.php?wsdl";  //nameof the service
+//$ns="http://localhost/lab1/service/myserver.php?wsdl";  //nameof the service
+$ns="http://wsjulenjon.hol.es/lab1/service/myserver.php?wsdl";  //nameof the service
 //using soap_server to create server object 
 $server = new soap_server; 
 $server->configureWSDL('konprobatu',$ns);
