@@ -4,7 +4,7 @@ require ('lib/nusoap.php');
 $pasahitza = $_GET['PASAHITZA'];
 
 //Web zerbitzariaren URL-a
-$wsdl = "http://wsjulenjon.holes/lab1/service/myserver.php";
+$wsdl = "http://wsjulenjon.hol.es/lab1/service/myserver.php";
 //$wsdl = "http://localhost:80/lab1/service/myserver.php";
 //Erabiltzaile objektua sortzen
 $client = new nusoap_client($wsdl, false);
