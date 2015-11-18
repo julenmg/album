@@ -18,13 +18,11 @@
 		<form name="erregistro" id="hongkiat-form" action="POST">
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
-				<p>Id:</p><input type="text" name="GALDERAID" id="question_id" autocomplete="off" tabindex="1" class="txtinput">
 				<p>Galdera:</p><input type="text" name="GALDERA" id="question" autocomplete="off" tabindex="1" class="txtinput" required>
 				<p>Erantzuna:</p><input type="text" name="ERANTZUNA" id="answer" autocomplete="off" tabindex="2" class="txtinput" required>
 				<p>Zailtasuna:</p></p><input type="text" name="ZAILTASUNA" id="difficult_level" autocomplete="off" tabindex="3" class="txtinput" >
 			<section id="buttons">
 			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaSortu(question.value,answer.value,difficult_level.value)" value="Galdera Gehitu">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaEditatu(question_id.value,question.value,answer.value,difficult_level.value)" value="Editatu">
 			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderakIkusi()" value="Bistaratu">
 			
 			<br style="clear:both;">
