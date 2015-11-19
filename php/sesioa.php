@@ -88,13 +88,13 @@ function get_bezeroaren_ip() {
 
 function iralogeatuDa(){
 	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="ika"){
-		header("Location: ../"); // Redirecting To Home Page	
+		header("Location: ../lab1/"); // Redirecting To Home Page	
 	}	
 }
 
 function ikalogeatuDa(){
 	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="ira"){
-		header("Location: ../"); // Redirecting To Home Page	
+		header("Location: ../lab1/"); // Redirecting To Home Page	
 	}	
 }
 
