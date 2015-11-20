@@ -97,3 +97,37 @@ function konprobatu(){
 		pasahitzaKonprobatu(pasaerantzun.value,tiketa.value);
 	}
 }
+
+function pasahitzaBalidatu(pasahitza,pasahitza1){
+	document.getElementById("passmezua").innerHTML="";
+	if(pasahitza == pasahitza1){
+	XMLHttpRequestObject = new XMLHttpRequest();
+	XMLHttpRequestObject.onreadystatechange = function(){
+		
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("passmezua").innerHTML=XMLHttpRequestObject.responseText;
+			//botoiagaitu();
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/pasahitzaBalidatuAJAX.php?PASAHITZA="+pasahitza+"&PASAHITZA1="+pasahitza1, true);
+	XMLHttpRequestObject.send();
+	}else{
+		document.getElementById("passmezua").innerHTML="<h2 style='color:red;font-size:1.6em;'> Ez dira berdinak!</h2>";
+}
+}
+
+function galderakIkusi2(){
+	XMLHttpRequestObject.onreadystatechange = function(){
+
+		document.getElementById("erakutsiGalderak").innerHTML="";
+		//alert(XMLHttpRequestObject.readyState);
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("erakutsiGalderak").innerHTML=XMLHttpRequestObject.responseText;
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/quizzesAJAX2.php", true);
+	XMLHttpRequestObject.send();
+}
+
+
+

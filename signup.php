@@ -8,7 +8,7 @@
   <link rel="icon" href="stylesPWS\images\form.png">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
-  <script type="text/javascript" src="js/myscript.js"></script>
+  <script type="text/javascript" src="js/ajax.js"></script>
  </head>
 
 <body>
@@ -19,18 +19,20 @@
 		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
-			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Jon" autocomplete="off" tabindex="1" class="txtinput">
+			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Jon" autocomplete="off" tabindex="1" class="txtinput" required>
 		
-			<p>Abizenak:</p><input type="text" name="ABIZENAK" id="name" placeholder="Adb:Egana Granado" autocomplete="off" tabindex="1" class="txtinput">
+			<p>Abizenak:</p><input type="text" name="ABIZENAK" id="name" placeholder="Adb:Egana Granado" autocomplete="off" tabindex="1" class="txtinput" required pattern="([a-zA-z]*\s[a-zA-z]*)*">
 		
-			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="2" class="txtinput" >
+			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="2" class="txtinput" pattern="^[a-z]*[0-9]{3}(\@irakasle|\@ikasle)\.ehu(\.es|\.eus)$" required >
 		
 			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" autocomplete="off" tabindex="3" class="txtinput" >
+
+			<p>Pasahitza:</p><input type="password" name="PASAHITZA2" id="password2" placeholder="Adb:123456" autocomplete="off" tabindex="4" class="txtinput" onchange="pasahitzaBalidatu(password.value,password2.value)">
 		
-			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="telephone" placeholder="Adb:987654321" maxlength="9" tabindex="4" class="txtinput">
+			<p>Telefonoa:</p><input type="tel" name="TELEFONOA" id="telephone" placeholder="Adb:987654321" maxlength="9" tabindex="5" class="txtinput" pattern="[0-9]{9}" required>
 			
 			<p>Interesa duzun teknologia:</p>
-			<textarea name="message" id="message" tabindex="5" class="txtblock"></textarea>
+			<textarea name="message" id="message" tabindex="6" class="txtblock"></textarea>
 			</section>
 			
 			<section id="aside" class="clearfix">
@@ -59,6 +61,9 @@
 				    <br/>
 					<input name="irudiaIgo"type="file" onchange="showMyImage(this)" />
 					<img id="thumbnil" style="width:60%; height:60%; margin-top:10px;"  src="" alt="image"/>
+					<div id="passmezua" style="height:50px;">
+					
+					</div>
 					<?php
 				
 							if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -68,30 +73,7 @@
 								$pasahitza = $_POST['PASAHITZA'];
 								$telefonoa = $_POST['TELEFONOA'];
 								$espezialitatea = $_POST['ESPEZIALITATEA'];
-								$regex1 = "/([a-zA-z]*\s[a-zA-z]*)*/";
-								$regex2 = "/^[a-z]*[0-9]{3}(\@irakasle|\@ikasle)\.ehu(\.es|\.eus)$/";
-								$datuokerrakMezua = "";
-			 
-								if($izena == ""){
-									$datuokerrakMezua  = $datuokerrakMezua . "Izena falta,";
-								}
-								
-								if(!preg_match($regex1,$abizenak)){
-									$datuokerrakMezua  = $datuokerrakMezua . "Abizenak falta,";
-								}
-								
-								if (!preg_match( $regex2, $posta ) ){
-									$datuokerrakMezua  = $datuokerrakMezua . "Sartu duzun emaila ez da egokia,";
-								}
-								
-								if(strlen($pasahitza) < 6){
-									$datuokerrakMezua  = $datuokerrakMezua . "Pasahitzaren tamaina, gutxienez 6koa,";
-								}
-								
-								if(strlen($telefonoa) < 9){
-									$datuokerrakMezua  = $datuokerrakMezua . "Telefonoaren luzera 9koa izan behar da,";
-								}
-								
+								$datuokerrakMezua = "";								
 								if(strcmp($espezialitatea, "B") == 0){
 									$espezialitatea = $_POST['BTT'];
 									if($espezialitatea == "")

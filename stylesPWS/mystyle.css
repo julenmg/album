@@ -89,7 +89,7 @@ background: #fff url('images/user.png') 5px 4px no-repeat;
 #hongkiat-form input#email {
 background: #fff url('images/email.png') 5px 4px no-repeat;
 }
-#hongkiat-form input#password {
+#hongkiat-form input#password,#password2 {
 background: #fff url('images/user.png') 5px 4px no-repeat;
 }
 #hongkiat-form input#telephone {

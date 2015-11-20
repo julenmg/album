@@ -13,7 +13,10 @@ iralogeatuDa();
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyleHandlingQuizzes.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
+  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mytable.css">
     <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/myquery.js"></script>
+    <script type="text/javascript" src="js/myquerytables.js"></script>
  </head>
 <body onload="galderakErakutsi()">
 	<section id="container">
@@ -29,7 +32,7 @@ iralogeatuDa();
 			<section id="buttons">
 			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaSortu(question.value,answer.value,difficult_level.value)" value="Galdera Gehitu">
 			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaEditatu(question_id.value,question.value,answer.value,difficult_level.value)" value="Editatu">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderakIkusi()" value="Bistaratu">
+			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderakIkusi2()" value="Bistaratu">
 			
 			<br style="clear:both;">
 		</section>
@@ -40,6 +43,7 @@ iralogeatuDa();
 					<div id="gald"></div>	
 			
 				</section>
+					<script type="text/javascript">$(document).ready(function(){$('#example').DataTable({"scrollY":true});});</script>
 					<section id="erakutsiGalderak">
 		
 				</section>

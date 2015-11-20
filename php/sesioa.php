@@ -24,6 +24,7 @@ function mainMenua(){
 			echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
 			echo "<span><a href='handlingQuizzes'>Handling Quizzes</a></span>";
 		}else{
+			echo "<span><a href='erregistroakikusi'>Erregistroak Ikusi</a></span> | ";
 			echo "<span><a href='reviewingQuizzes'>Reviewing Quizzes</a></span> | ";
 			echo "<span><a href='getUserInform'>Get User Inform</a></span> ";
 
