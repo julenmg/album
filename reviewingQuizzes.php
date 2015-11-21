@@ -11,41 +11,34 @@ iralogeatuDa();
   <meta name="author" content="Jake Rocheleau">
   <link rel="icon" href="stylesPWS\images\form.png">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
-  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyleHandlingQuizzes.css">
+  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyleReviewingQuizzes.css">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/responsive.css">
-  <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mytable.css">
-    <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/myquery.js"></script>
-    <script type="text/javascript" src="js/myquerytables.js"></script>
+    <script type="text/javascript" src="js/reviewingQuizzes.js"></script>
  </head>
-<body onload="galderakErakutsi()">
+<body onload="galderakIkusi()" >
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
-		<h2>Galdera sortu/editatu/ikusi</h2>
+		<h2>Galdera editatu/ikusi</h2>
 		<form name="erregistro" id="hongkiat-form" action="POST">
 		<div id="wrapping" class="clearfix">
+				<br style="clear:both;">
 			<section id="aligned">
-				<p>Id:</p><input type="text" name="GALDERAID" id="question_id" autocomplete="off" tabindex="1" class="txtinput">
-				<p>Galdera:</p><input type="text" name="GALDERA" id="question" autocomplete="off" tabindex="1" class="txtinput" required>
-				<p>Erantzuna:</p><input type="text" name="ERANTZUNA" id="answer" autocomplete="off" tabindex="2" class="txtinput" required>
-				<p>Zailtasuna:</p></p><input type="text" name="ZAILTASUNA" id="difficult_level" autocomplete="off" tabindex="3" class="txtinput" >
-			<section id="buttons">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaSortu(question.value,answer.value,difficult_level.value)" value="Galdera Gehitu">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderaEditatu(question_id.value,question.value,answer.value,difficult_level.value)" value="Editatu">
-			<input type="button" name="submit" id="submitbtn" class="submitbtn" tabindex="7" onClick="galderakIkusi2()" value="Bistaratu">
+				<section id="buttons">
+					<input type="button" name="edit" id="editbtn" class="submitbtn" tabindex="1" value="Editatu" onclick="editatzekoPrestatu()">
+					<input type="button" name="save" id="savebtn" class="submitbtn" tabindex="2" value="Gorde" onclick="galderaEditatu(question_id.value,question.value,answer.value,difficult_level.value)"style="display:none">
+					<div id="erakutsiMezua"></div>
+				</section>
+				<br style="clear:both;">
+			<p>Id:</p><input type="text" name="GALDERAID" id="question_id" autocomplete="off" tabindex="3" class="txtinput" onchange="osatu(question_id.value)">
+			<p>Galdera:</p><input type="text" name="GALDERA" id="question" autocomplete="off" tabindex="4" class="txtinput" disabled="disabled">
+			<p>Erantzuna:</p><input type="text" name="ERANTZUNA" id="answer" autocomplete="off" tabindex="5" class="txtinput" disabled="disabled" >
+			<p>Zailtasuna:</p></p><input type="text" name="ZAILTASUNA" id="difficult_level" autocomplete="off" tabindex="4" class="txtinput" disabled="disabled" >
 			
-			<br style="clear:both;">
 		</section>
-			</section>
+		
 			<section id="aside1" class="clearfix">
 				<section id="prioritycase">
-					<div style="float: left">Nire galderak/Galderak guztira DB: </div>
-					<div id="gald"></div>	
-			
-				</section>
-					<script type="text/javascript">$(document).ready(function(){$('#example').DataTable({"scrollY":true});});</script>
-					<section id="erakutsiGalderak">
-		
+					<div  id="erakutsiGalderak"> </div>
 				</section>
 			</section>
 			

@@ -29,17 +29,6 @@ function galderaSortu(galdera,erantzuna,zailtasuna){
 }
 }
 
-function galderaEditatu(id,galdera,erantzuna,zailtasuna){
-	XMLHttpRequestObject.onreadystatechange = function(){
-		document.getElementById("erakutsiGalderak").innerHTML="";
-		//alert(XMLHttpRequestObject.readyState);
-		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
-			document.getElementById("erakutsiGalderak").innerHTML=XMLHttpRequestObject.responseText;
-		}
-	}
-	XMLHttpRequestObject.open("GET","./php/editquestionAJAX.php?GALDERA_ID="+id+"&GALDERA="+galdera+"&ERANTZUNA="+erantzuna+"&ZAILTASUNA="+zailtasuna, true);
-	XMLHttpRequestObject.send();
-}
 
 //Galderak erakusteko bi funtzio
 function x(){
@@ -116,18 +105,6 @@ function pasahitzaBalidatu(pasahitza,pasahitza1){
 }
 }
 
-function galderakIkusi2(){
-	XMLHttpRequestObject.onreadystatechange = function(){
-
-		document.getElementById("erakutsiGalderak").innerHTML="";
-		//alert(XMLHttpRequestObject.readyState);
-		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
-			document.getElementById("erakutsiGalderak").innerHTML=XMLHttpRequestObject.responseText;
-		}
-	}
-	XMLHttpRequestObject.open("GET","./php/quizzesAJAX2.php", true);
-	XMLHttpRequestObject.send();
-}
 
 
 
