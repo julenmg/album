@@ -28,6 +28,8 @@ iralogeatuDa();
 					<input type="button" name="save" id="savebtn" class="submitbtn" tabindex="2" value="Gorde" onclick="galderaEditatu(question_id.value,question.value,answer.value,difficult_level.value)"style="display:none">
 					<div id="erakutsiMezua"></div>
 				</section>
+				<div id="erakutsiMezua">
+				</div>
 				<br style="clear:both;">
 			<p>Id:</p><input type="text" name="GALDERAID" id="question_id" autocomplete="off" tabindex="3" class="txtinput" onchange="osatu(question_id.value)">
 			<p>Galdera:</p><input type="text" name="GALDERA" id="question" autocomplete="off" tabindex="4" class="txtinput" disabled="disabled">

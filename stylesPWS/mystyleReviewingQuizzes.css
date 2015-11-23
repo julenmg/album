@@ -41,9 +41,17 @@ box-sizing: border-box;
 
 
 /*Edit eta save botoia*/
+#btn_eta_mezua{
+	height: 100%;
+	width: 20%;
+}
 #buttons{
-	height: 3.2em;
-	width: 40%;
+	height: left;
+	width: 50%;
+}
+#erakutsiMezua{
+	height: left;
+	width: 50%;
 }
 #buttons #editbtn:hover, #buttons #editbtn:active {
 border-color: #7c9826 #7c9826 #000;

@@ -105,6 +105,18 @@ function pasahitzaBalidatu(pasahitza,pasahitza1){
 }
 }
 
+function pasahitzaAldatu(pasahitza){
+	document.getElementById("passmezua2").innerHTML="";
+	XMLHttpRequestObject = new XMLHttpRequest();
+	XMLHttpRequestObject.onreadystatechange = function(){
+		
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("passmezua2").innerHTML=XMLHttpRequestObject.responseText;
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/pasahitzaAldatuAJAX.php?PASAHITZA="+pasahitza, true);
+	XMLHttpRequestObject.send();
+}
 
 
 

@@ -14,8 +14,9 @@ else {
  
 }
 }
-$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,TELEFONOA,ESPEZIALITATEA,IRUDIA)
-		VALUES ('{$posta}','{$izena}','{$abizenak}','{$pasahitza}','{$telefonoa}','{$espezialitatea}','{$data}')";
+
+$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,TELEFONOA,ESPEZIALITATEA,IRUDIA,BLOKEATUTA)
+		VALUES ('{$posta}','{$izena}','{$abizenak}','{$pasahitza}','{$telefonoa}','{$espezialitatea}','{$data}',1)";
 
 // SQL exekutatu 
 $result = $dblink->query($sql);

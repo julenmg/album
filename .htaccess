@@ -13,5 +13,6 @@ RewriteRule ^getUserInform$ getUserInform.php [L]
 RewriteRule ^handlingQuizzes$ handlingQuizzes.php [L]
 RewriteRule ^simplesignup$ simplesignup.php [L]
 RewriteRule ^reviewingQuizzes$ reviewingQuizzes.php [L]
+RewriteRule ^changePass$ changePass.php [L]
 
 

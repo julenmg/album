@@ -4,7 +4,8 @@ session_start();
 
 function goikoMenua(){
 	if(isset($_SESSION['login_email'])){
-		echo "<span class='right' style='display:block;'><a href='php/logout.php'>Logout</a></span>";
+		echo "<span class='right' ><a href='php/logout.php'>Logout</a></span> | ";
+		echo "<span class='right' ><a href='changePass'>Change Password</a></span>";
 	}
 	else{
 		echo "<span class='right'><a href='login'>Login</a></span> | ";
