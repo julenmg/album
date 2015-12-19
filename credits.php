@@ -14,32 +14,27 @@
 		   href='stylesPWS/smartphone.css' />
 	<script type="text/javascript" src="js/geolokalizazioa.js"></script>
   </head>
-  <body onload="javascript:initGeolocation()">
   <div id='page-wrap'>
 	<header class='main' id='h1'>
     <?php
 		include "php/sesioa.php";
 		goikoMenua();
 	?>
-	<h2>Quiz: crazy questions</h2>
+	<h2>Argazki albuma</h2>
     </header>
     <section class="main" id="s1">
 	<center>
 		<h2>Credits</h2>
 		<article>
 			<h3>Nire datuak</h3>
-			<p>Deiturak: Jon Egaña</p>
+			<p>Deiturak: Julen Merino</p>
 			<p>Espezialitatea: Software Ingeniaritza</p>
-			<img src="image/image1.jpg" alt="Smiley face" height="200" width="400"/>
-			<div id="map" style="{width:100px;height:100px;}">
-				<img id="static-map" />
-			</div> 
+			<img src="image/Desert.jpg" height="250" width="400"/>
+
 		</article>
 	</center>
 	</section>
 	<footer class='main' id='f1'>
-		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
-		<a href='credits.php'>Credits</a>
 		<a href='./'>Home</a>
 	</footer>
 </div>

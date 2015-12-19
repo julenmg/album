@@ -2,21 +2,8 @@
 
 include_once "konexioa.php";
 
-$data = null;
-if($_FILES["irudiaIgo"][size] != 0){
-if(!empty(getimagesize($_FILES["irudiaIgo"]["tmp_name"]))) {
-     echo "File is an image - " . $check["mime"] . ".";
-
-	$data = $dblink->real_escape_string(file_get_contents($_FILES  ['irudiaIgo']['tmp_name']));
-}
-else {
-    echo "File is not an image.";
- 
-}
-}
-
-$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,TELEFONOA,ESPEZIALITATEA,IRUDIA,BLOKEATUTA)
-		VALUES ('{$posta}','{$izena}','{$abizenak}','{$pasahitza}','{$telefonoa}','{$espezialitatea}','{$data}',1)";
+$sql="INSERT INTO ERABILTZAILEA(POSTA,IZENA,ABIZENAK,PASAHITZA,ADMINISTRATZAILE)
+		VALUES ('{$posta}','{$izena}','{$abizenak}','{$pasahitza}','2')";
 
 // SQL exekutatu 
 $result = $dblink->query($sql);

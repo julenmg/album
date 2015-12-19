@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Erregistratu</title>
+  <title>Argazkia gehitu</title>
   <meta name="author" content="Jake Rocheleau">
   <link rel="icon" href="stylesPWS\images\form.png">
   <link rel="stylesheet" type="text/css" media="all" href="stylesPWS/mystyle.css">
@@ -15,23 +15,22 @@
 
 	<section id="container">
 		<span class="chyron"><em><a href="./">&laquo; atzera</a></em></span>
-		<h2>Zure datuak sartu</h2>
+		<h2>Argazkiaren datuak sartu</h2>
 		<form name="erregistro" id="hongkiat-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" enctype="multipart/form-data">
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
-			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Julen" autocomplete="off" tabindex="1" class="txtinput" required>
-		
-			<p>Abizenak:</p><input type="text" name="ABIZENAK" id="name" placeholder="Adb:Merino Guezala" autocomplete="off" tabindex="1" class="txtinput" required pattern="([a-zA-z]*\s[a-zA-z]*)*">
-		
-			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname@gmail.ehu.es" autocomplete="off" tabindex="2" class="txtinput" pattern="/\w*[0-9]{0,9}+@(gmail|hotmail|yahoo)\.[A-Za-z]{2,4}/" required >
-		
-			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" autocomplete="off" tabindex="3" class="txtinput" >
+			<p>Etiketa:</p> <input type="text" name="ETIKETA" id="name" placeholder="Adb:Loreak" autocomplete="off" tabindex="1" class="txtinput" required>
 
-			<p>Pasahitza:</p><input type="password" name="PASAHITZA2" id="password2" placeholder="Adb:123456" autocomplete="off" tabindex="4" class="txtinput" onchange="pasahitzaBalidatu(password.value,password2.value)">
+			<p>Izena:</p> <input type="text" name="IZENA" id="name" placeholder="Adb:Tulipanak" autocomplete="off" tabindex="1" class="txtinput" required>
 		
+			</section>
 			
 			<section id="aside" class="clearfix">
 				<section id="prioritycase">
+					
+				    <br/>
+					<input name="irudiaIgo"type="file" onchange="showMyImage(this)" />
+					<img id="thumbnil" style="width:60%; height:60%; margin-top:10px;"  src="" alt="image"/>
 					<div id="passmezua" style="height:50px;">
 					
 					</div>
@@ -39,13 +38,10 @@
 				
 							if ($_SERVER["REQUEST_METHOD"] == "POST"){
 								$izena = $_POST['IZENA'];
-								$abizenak = $_POST['ABIZENAK'];
-								$posta = $_POST['POSTA'];
-								$pasahitza = $_POST['PASAHITZA'];
+								$etiketa = $_POST['ETIKETA'];
 								$datuokerrakMezua = "";								
-								
 								if($datuokerrakMezua == ""){
-									include('php/Erregistratu.php');
+									include('php/gehituargazkiak.php');
 								}else{
 									echo "<h2>". $datuokerrakMezua . "</h2>";
 								}

@@ -19,7 +19,7 @@
 		<div id="wrapping" class="clearfix">
 			<section id="aligned">
 
-			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname001@ikasle.ehu.es" autocomplete="off" tabindex="1" class="txtinput" >
+			<p>Posta-korreoa:</p><input type="email" name="POSTA" id="email" placeholder="Adb:myname@gmail.com" autocomplete="off" tabindex="1" class="txtinput" >
 		
 			<p>Pasahitza:</p><input type="password" name="PASAHITZA" id="password" placeholder="Adb:123456" pattern=".{6,}"required autocomplete="off" tabindex="2" class="txtinput" required>
 
@@ -33,7 +33,7 @@
 							if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								$email = $_POST['POSTA'];
 								$password = $_POST['PASAHITZA'];
-								$regex = "/^[a-z]*[0-9]{3}(\@irakasle|\@ikasle)\.ehu(\.es|\.eus)$/"; 
+								$regex = "/\w+@(gmail|hotmail|yahoo)\.[A-Za-z]{2,4}/"; 
 			 
 								if (!preg_match( $regex, $email ) ){
 									echo "<h2> Sartu duzun emaila ez da egokia</h2>";

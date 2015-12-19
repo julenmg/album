@@ -4,36 +4,28 @@ session_start();
 
 function goikoMenua(){
 	if(isset($_SESSION['login_email'])){
-		echo "<span class='right' ><a href='php/logout.php'>Logout</a></span> | ";
-		echo "<span class='right' ><a href='changePass'>Change Password</a></span>";
+		echo "<span class='right' ><a href='php/logout.php'>Logout</a></span>";
 	}
 	else{
 		echo "<span class='right'><a href='login'>Login</a></span> | ";
-		echo "<span class='right'><a href='signup'>SignUp</a></span> | ";
-		echo "<span class='right'><a href='simplesignup'>SimpleSignUp</a></span>";
+		echo "<span class='right'><a href='signup'>SignUp</a></span>";
 	}
 }
 
 function mainMenua(){
 
 	echo "<span><a href='./'>Home</a></span> | ";
-	echo "<span><a href='credits'>Credits</a></span> | ";
+	echo "<span><a href='credits'>Credits</a></span>";
 	if(isset($_SESSION['login_email'])){
-		if($_SESSION['login_rol']=="ika"){
-			echo "<span><a href='seeXMLQuestions'>See XML Questions</a></span> | ";
-			echo "<span><a href='quiz'>Quiz</a></span> | ";
-			echo "<span><a href='insertquestion'>Insert Question</a></span> | ";
-			echo "<span><a href='handlingQuizzes'>Handling Quizzes</a></span>";
+		if($_SESSION['login_rol']=="bazkide"){
+			echo " | <span><a href='argazkiakikusi'>Argazkiak ikusi</a></span>";
+			echo " | <span><a href='argazkiakgehitu'>Argazkiak gehitu</a></span>";
 		}else{
-			echo "<span><a href='erregistroakikusi'>Erregistroak Ikusi</a></span> | ";
-			echo "<span><a href='reviewingQuizzes'>Reviewing Quizzes</a></span> | ";
-			echo "<span><a href='getUserInform'>Get User Inform</a></span> ";
-
+			echo " | <span><a href='argazkiakikusi'>Argazkiak ikusi</a></span> | ";
+			echo "<span><a href='argazkiakgehitu'>Argazkiak gehitu</a></span> | ";
+			echo "<span><a href='bazkideakonartu'>Bazkideak onartu/blokeatu</a></span> | ";
+			echo "<span><a href='getUserInform'>Argazkiak ezabatu</a></span> ";
 		}	
-	
-	}else{
-		echo "<span><a href='quiz'>Quiz</a></span>";
-
 	}
 }
 
@@ -88,15 +80,21 @@ function get_bezeroaren_ip() {
 
 }
 
-function iralogeatuDa(){
-	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="ika"){
-		header("Location: ../lab1/"); // Redirecting To Home Page	
+function adminlogeatuDa(){
+	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="bazkide"){
+		header("Location: ../album/"); // Redirecting To Home Page	
 	}	
 }
 
-function ikalogeatuDa(){
-	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="ira"){
-		header("Location: ../lab1/"); // Redirecting To Home Page	
+function bazkidelogeatuDa(){
+	if(!isset($_SESSION['login_email']) || $_SESSION['login_rol']=="administratzaile"){
+		header("Location: ../album/"); // Redirecting To Home Page	
+	}	
+}
+
+function bazedoadminlogeatuDa(){
+	if(!isset($_SESSION['login_email'])){
+		header("Location: ../album/"); // Redirecting To Home Page	
 	}	
 }
 

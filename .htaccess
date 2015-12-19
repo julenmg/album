@@ -1,6 +1,6 @@
 Options +FollowSymLinks
 RewriteEngine on
-RewriteBase /lab1/
+RewriteBase /album/
 RewriteRule ^/$ index.php [L]
 RewriteRule ^credits$ credits.php [L]
 RewriteRule ^insertquestion$ insertquestion.php [L]
@@ -14,5 +14,7 @@ RewriteRule ^handlingQuizzes$ handlingQuizzes.php [L]
 RewriteRule ^simplesignup$ simplesignup.php [L]
 RewriteRule ^reviewingQuizzes$ reviewingQuizzes.php [L]
 RewriteRule ^changePass$ changePass.php [L]
-
+RewriteRule ^argazkiakikusi$ argazkiakikusi.php [L]
+RewriteRule ^argazkiakgehitu$ argazkiakgehitu.php [L]
+RewriteRule ^bazkideakonartu$ bazkideakonartu.php [L]
 
