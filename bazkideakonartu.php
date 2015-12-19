@@ -27,9 +27,9 @@ adminlogeatuDa();
 			<p>Posta:</p><input type="email" name="BAZKIDEPOSTA" id="bazkide_posta" placeholder="Adb:myname@gmail.ehu.es" autocomplete="off" tabindex="2" class="txtinput" pattern="/\w*[0-9]{0,9}+@(gmail|hotmail|yahoo)\.[A-Za-z]{2,4}/" required >
 
 		<section id="buttons">
-			<input type="submit" name="Onartu" id="submitbtn" class="submitbtn" tabindex="7" value="ONARTU" 
+			<input type="button" name="Onartu" id="submitbtn1" class="submitbtn" tabindex="7" value="ONARTU" 
 onClick="erabiltzaileaonartu(bazkide_posta.value)">
-			<input type="submit" name="Blokeatu" id="submitbtn2" class="submitbtn" tabindex="7" value="BLOKEATU" onClick="erabiltzaileablokeatu(bazkide_posta.value)">
+			<input type="button" name="Blokeatu" id="submitbtn2" class="submitbtn" tabindex="7" value="BLOKEATU" onClick="erabiltzaileablokeatu(bazkide_posta.value)">
 			<br style="clear:both;">
 		</section>
 			<div id="erakutsiMezua"> </div>
