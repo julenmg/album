@@ -1,23 +1,5 @@
 XMLHttpRequestObject = new XMLHttpRequest();
 
-function osatu(bazkidePosta){
-		
-	var izena = document.getElementById('name');
-	var abizenak = document.getElementById('surname');
-	XMLHttpRequestObject.onreadystatechange = function(){
-		//alert(XMLHttpRequestObject.readyState);
-		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
-			var string = XMLHttpRequestObject.responseText;
-			var array=string.split(";");
-			izena.value = array[0];
-			abizenak.value = array[1];
-		}
-	}
-	XMLHttpRequestObject.open("GET","./php/erabiltzaileakAJAX2.php?POSTA="+bazkidePosta, true);
-	XMLHttpRequestObject.send();
- 
-}
-
 
 function erabiltzaileakIkusi(){
 
@@ -30,5 +12,29 @@ function erabiltzaileakIkusi(){
 		}
 	}
 	XMLHttpRequestObject.open("GET","./php/erabiltzaileakAJAX.php", true);
+	XMLHttpRequestObject.send();
+}
+
+function erabiltzaileaonartu(posta){
+	XMLHttpRequestObject.onreadystatechange = function(){
+		document.getElementById("erakutsiMezua").innerHTML="";
+		//alert(XMLHttpRequestObject.readyState);
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("erakutsiMezua").innerHTML=XMLHttpRequestObject.responseText;
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/erabeditatu.php?POSTA="+posta, true);
+	XMLHttpRequestObject.send();
+}
+
+function erabiltzaileablokeatu(posta){
+	XMLHttpRequestObject.onreadystatechange = function(){
+		document.getElementById("erakutsiMezua").innerHTML="";
+		//alert(XMLHttpRequestObject.readyState);
+		if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){
+			document.getElementById("erakutsiMezua").innerHTML=XMLHttpRequestObject.responseText;
+		}
+	}
+	XMLHttpRequestObject.open("GET","./php/erabeditatu2.php?POSTA="+posta, true);
 	XMLHttpRequestObject.send();
 }
