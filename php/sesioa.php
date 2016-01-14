@@ -23,8 +23,7 @@ function mainMenua(){
 		}else{
 			echo " | <span><a href='argazkiakikusi'>Argazkiak ikusi</a></span> | ";
 			echo "<span><a href='argazkiakgehitu'>Argazkiak gehitu</a></span> | ";
-			echo "<span><a href='bazkideakonartu'>Bazkideak onartu/blokeatu</a></span> | ";
-			echo "<span><a href='getUserInform'>Argazkiak ezabatu</a></span> ";
+			echo "<span><a href='bazkideakonartu'>Bazkideak onartu/blokeatu</a></span>";
 		}	
 	}
 }
